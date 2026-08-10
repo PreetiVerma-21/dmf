@@ -1,0 +1,398 @@
+@import "tailwindcss";
+
+:root {
+  --navy-dark: #081220;
+  --navy-main: #0D1B2A;
+  --navy-card: #15263A;
+  --teal-primary: #00796B;
+  --teal-hover: #00695C;
+  --teal-light: rgba(0, 121, 107, 0.12);
+  --teal-glow: rgba(0, 121, 107, 0.4);
+  --gray-bg: #F4F6F9;
+  --gray-text: #64748B;
+  --dark-text: #1E293B;
+  --white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--gray-bg);
+  color: var(--dark-text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--navy-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--teal-primary);
+  border-radius: 4px;
+}
+
+/* Header & Navigation Styles */
+.top-header-strip {
+  background-color: var(--navy-dark);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.main-nav-bar {
+  background-color: var(--navy-main);
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #FFFFFF;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--teal-primary);
+  border-radius: 2px;
+}
+
+/* Hero Section Container & Connected Pattern */
+.hero-section {
+  background: linear-gradient(135deg, #091524 0%, #0D1B2A 50%, #0B192C 100%);
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.hero-curve-bottom-container {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 5rem;
+  z-index: 20;
+  pointer-events: none;
+  background-color: #F4F6F9;
+  background-image: 
+    radial-gradient(circle at 50% 100%, #00796b28 0%, #0000 80%),
+    radial-gradient(#00796b38 2.2px, #0000 2.2px);
+  background-size: 100% 100%, 32px 32px;
+  clip-path: url(#hero-curve-clip);
+  -webkit-clip-path: url(#hero-curve-clip);
+}
+
+@media (min-width: 640px) {
+  .hero-curve-bottom-container {
+    height: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-curve-bottom-container {
+    height: 7rem;
+  }
+}
+
+.dept-connected-pattern {
+  position: relative;
+  background-color: #F4F6F9;
+  background-image: 
+    radial-gradient(circle at 50% 0%, #00796b28 0%, #0000 60%),
+    radial-gradient(#00796b38 2.2px, #0000 2.2px);
+  background-size: 100% 100%, 32px 32px;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(0, 121, 107, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(13, 27, 42, 0.8) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  pointer-events: none;
+}
+
+.hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background-color: rgba(0, 121, 107, 0.25);
+  border: 1px solid rgba(0, 121, 107, 0.5);
+  border-radius: 30px;
+  color: #2DD4BF;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #2DD4BF;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #2DD4BF;
+}
+
+/* Floating Image Badge */
+.hero-image-container {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.hero-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-badge-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background-color: #00796B;
+  color: #FFFFFF;
+  padding: 16px 24px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 10px 25px rgba(0, 121, 107, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+/* Department Cards */
+.dept-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 20px;
+  padding: 28px 22px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.dept-card:hover {
+  transform: translateY(-8px);
+  background: #FFFFFF;
+  box-shadow: 0 20px 40px -12px rgba(0, 121, 107, 0.18), 0 0 0 1px rgba(0, 121, 107, 0.3);
+}
+
+.dept-icon-box {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #E6F4F1 0%, #D0EBE5 100%);
+  color: var(--teal-primary);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.35s ease;
+  box-shadow: inset 0 0 0 1px rgba(0, 121, 107, 0.15);
+}
+
+.dept-card:hover .dept-icon-box {
+  background: linear-gradient(135deg, #00796B 0%, #004D40 100%);
+  color: #FFFFFF;
+  transform: scale(1.1) rotate(-3deg);
+  box-shadow: 0 10px 20px -5px rgba(0, 121, 107, 0.4);
+}
+
+/* Checkmark Feature Item */
+.feature-check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--dark-text);
+  font-size: 16px;
+}
+
+.check-icon-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--teal-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* About Floating Card */
+.about-badge-card {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background-color: #00796B;
+  color: white;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 121, 107, 0.3);
+  max-width: 240px;
+  z-index: 10;
+}
+
+/* Stats Banner */
+.stats-banner-container {
+  background-color: var(--navy-dark);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  padding: 48px 32px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.stat-box {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+  background-color: rgba(0, 121, 107, 0.15);
+  border-color: rgba(0, 121, 107, 0.4);
+  transform: translateY(-4px);
+}
+
+/* Service Card Grid */
+.service-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--teal-primary);
+}
+
+.service-card-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.service-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-card-image img {
+  transform: scale(1.06);
+}
+
+.service-badge-pill {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: var(--teal-primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Footer Section */
+.footer-container {
+  background-color: var(--navy-dark);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-top-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px 24px;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.footer-link:hover {
+  color: var(--teal-primary);
+  padding-left: 4px;
+}
+
+/* Utility layout helpers */
+.container-custom {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Carousel pagination dots */
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #CBD5E1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  width: 14px;
+  height: 14px;
+  background-color: var(--teal-primary);
+}

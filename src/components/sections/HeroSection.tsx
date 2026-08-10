@@ -1,0 +1,210 @@
+import React from "react";
+import { Button } from "antd";
+import { ArrowRight, ShieldCheck } from "lucide-react";
+import { motion } from "framer-motion";
+
+import heroImg from "../../assets/images/hero_admin_team.png";
+import heroBgImg from "../../assets/images/hero_bg_futuristic.png";
+
+interface HeroSectionProps {
+  onLearnMore?: () => void;
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
+  return (
+    <section
+      id="home"
+      className="relative pt-20 pb-28 lg:pt-24 lg:pb-36 overflow-hidden bg-[#0B192C]"
+    >
+      {/* Hidden SVG ClipPath Definition for Bottom Curve Mask */}
+      <svg className="absolute w-0 h-0 overflow-hidden" aria-hidden="true">
+        <defs>
+          <clipPath id="hero-curve-clip" clipPathUnits="objectBoundingBox">
+            <path d="M 0 0 Q 0.5 0.85 1 0 L 1 1 L 0 1 Z" />
+          </clipPath>
+        </defs>
+      </svg>
+
+      {/* Background Mining & Digital Trust Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 mix-blend-luminosity pointer-events-none"
+        style={{ backgroundImage: `url(${heroBgImg})` }}
+      />
+
+      {/* Dark Navy Blue Gradient Overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 40%, rgba(0, 121, 107, 0.25) 0%, transparent 65%), linear-gradient(rgb(13 27 42 / 65%) 0%, rgba(9, 21, 36, 0.98) 100%)",
+        }}
+      />
+
+      <div className="container-custom relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* Left Text & Portal Graphics Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-6 space-y-6"
+          >
+            {/* Header Text */}
+            <div className="space-y-1 opacity-90 select-none">
+              <h4 className="text-xl sm:text-2xl font-black text-slate-300 tracking-wider uppercase font-sans">
+                DISTRICT MINERAL FOUNDATION
+              </h4>
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-200 tracking-tight">
+                MINING TRUST PORTAL
+              </h3>
+              <p className="text-sm font-semibold text-slate-400 tracking-wide">
+                Pradhan Mantri Khanij Kshetra Kalyan Yojana (PMKKKY)
+              </p>
+            </div>
+
+            {/* Pill Badge */}
+            <div className="pt-2">
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-[#00796B]/30 border border-[#00796B]/60 rounded-full text-[#2DD4BF] text-xs font-bold uppercase tracking-wider backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-[#2DD4BF] shadow-[0_0_8px_#2DD4BF]"></span>
+                <span>MINING BENEFICIARY TRUST GOVERNANCE</span>
+              </div>
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold leading-[1.12] tracking-tight">
+              <span className="text-white">Empowering Communities & </span>
+              <span className="bg-gradient-to-r from-[#2DD4BF] via-[#14B8A6] to-[#00B4D8] bg-clip-text text-transparent">
+                Sustainable Mining Zones
+              </span>
+            </h1>
+
+            {/* Paragraph Subtitle */}
+            <p className="text-slate-300 text-base sm:text-lg font-normal leading-relaxed max-w-xl">
+              Dedicated to transparently utilizing mineral royalty funds for
+              healthcare, education, clean drinking water, and rural livelihood
+              infrastructure across mining-affected villages.
+            </p>
+
+            {/* CTA Button */}
+            <div className="pt-3">
+              <Button
+                type="primary"
+                size="large"
+                onClick={onLearnMore}
+                icon={<ArrowRight className="w-5 h-5 ml-1" />}
+                iconPosition="end"
+                className="!bg-[#00796B] hover:!bg-[#00695C] !h-13 !px-8 !text-base !font-bold !rounded-xl !shadow-xl shadow-[#00796B]/30 flex items-center transition-transform hover:scale-105"
+              >
+                Explore Trust Projects
+              </Button>
+            </div>
+          </motion.div>
+
+          {/* Right Image Column with Overlay Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-6 relative"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+              <img
+                src={heroImg}
+                alt="District Mineral Foundation Project Inspection"
+                className="w-full h-[380px] sm:h-[460px] object-cover"
+              />
+
+              {/* Floating 100% Transparent Trust Badge Overlay */}
+              <div className="absolute bottom-6 left-6 bg-[#00796B] text-[#FFFFFF] px-6 py-4 rounded-xl flex items-center gap-4 shadow-xl border border-white/10 backdrop-blur-md">
+                <div className="w-11 h-11 bg-white/20 rounded-lg flex items-center justify-center">
+                  <ShieldCheck className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-2xl font-black leading-none">100%</div>
+                  <div className="text-xs font-bold text-slate-100 uppercase tracking-wider mt-1">
+                    Transparent Mineral Trust
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+
+      {/* Bent Bottom Curve Container rendered with exact CSS radial gradients and clip-path */}
+      <div className="hero-curve-bottom-container" />
+
+      {/* Animated shiny border tracing the curve */}
+      <svg
+        className="absolute bottom-0 left-0 w-full h-[5rem] sm:h-[6rem] lg:h-[7rem] pointer-events-none"
+        viewBox="0 0 1440 112"
+        preserveAspectRatio="none"
+        style={{
+          zIndex: 25,
+          filter: 'drop-shadow(0 2px 10px rgba(45, 212, 191, 0.75))',
+        }}
+      >
+        <defs>
+          {/* Animated gradient for the bright white/cyan shiny sweep effect */}
+          <linearGradient id="shinyCurveBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="transparent" />
+            <stop offset="25%" stopColor="transparent" />
+            <stop offset="40%" stopColor="#2DD4BF" stopOpacity="0.8" />
+            <stop offset="48%" stopColor="#FFFFFF" stopOpacity="1" />
+            <stop offset="50%" stopColor="#00F5D4" stopOpacity="1" />
+            <stop offset="52%" stopColor="#FFFFFF" stopOpacity="1" />
+            <stop offset="60%" stopColor="#2DD4BF" stopOpacity="0.8" />
+            <stop offset="75%" stopColor="transparent" />
+            <stop offset="100%" stopColor="transparent" />
+            <animateTransform
+              attributeName="gradientTransform"
+              type="translate"
+              from="-1 0"
+              to="1 0"
+              dur="2.5s"
+              repeatCount="indefinite"
+            />
+          </linearGradient>
+
+          {/* Strong static base theme gradient line */}
+          <linearGradient id="curveGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#00796B" stopOpacity="0.9" />
+            <stop offset="20%" stopColor="#2DD4BF" stopOpacity="1" />
+            <stop offset="50%" stopColor="#00F5D4" stopOpacity="1" />
+            <stop offset="80%" stopColor="#2DD4BF" stopOpacity="1" />
+            <stop offset="100%" stopColor="#00796B" stopOpacity="0.9" />
+          </linearGradient>
+        </defs>
+
+        {/* Thick ambient glow line behind curve */}
+        <path
+          d="M 0 0 Q 720 95 1440 0"
+          fill="none"
+          stroke="#2DD4BF"
+          strokeWidth="10"
+          opacity="0.4"
+        />
+
+        {/* Crisp solid base theme border */}
+        <path
+          d="M 0 0 Q 720 95 1440 0"
+          fill="none"
+          stroke="url(#curveGlow)"
+          strokeWidth="3.5"
+          opacity="0.95"
+        />
+
+        {/* Animated intense shiny sweep line */}
+        <path
+          d="M 0 0 Q 720 95 1440 0"
+          fill="none"
+          stroke="url(#shinyCurveBorder)"
+          strokeWidth="5"
+        />
+      </svg>
+
+    </section>
+  );
+};
