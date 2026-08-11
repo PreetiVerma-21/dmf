@@ -5,22 +5,24 @@ import { Mail, MapPin, PhoneCall, Pickaxe, ArrowUpRight } from "lucide-react";
 
 /** Distant mountain range — broad majestic peaks with gentle ridgelines */
 const MountainsBack: React.FC = () => (
-  <svg
-    className="absolute bottom-0 left-0 w-full"
-    viewBox="0 0 1440 400"
-    preserveAspectRatio="none"
-    style={{ height: "90%" }}
-  ></svg>
+  // <svg
+  //   className="absolute bottom-0 left-0 w-full"
+  //   viewBox="0 0 1440 400"
+  //   preserveAspectRatio="none"
+  //   style={{ height: "90%" }}
+  // ></svg>
+  <></>
 );
 
 /** Mid-distance mountain range — sharper dramatic summits with defined ridges */
 const MountainsMid: React.FC = () => (
-  <svg
-    className="absolute bottom-0 left-0 w-full"
-    viewBox="0 0 1440 400"
-    preserveAspectRatio="none"
-    style={{ height: "80%" }}
-  ></svg>
+  // <svg
+  //   className="absolute bottom-0 left-0 w-full"
+  //   viewBox="0 0 1440 400"
+  //   preserveAspectRatio="none"
+  //   style={{ height: "80%" }}
+  // ></svg>
+  <></>
 );
 
 /** Closest mountain range — bold rugged formations with steep faces */
@@ -187,19 +189,19 @@ export const Footer: React.FC = () => {
   return (
     <footer
       id="contact"
-      className="relative bg-[#0a1a1a] text-white overflow-hidden"
+      className="relative bg-[#141C2E] text-white overflow-hidden"
     >
       {/* ═══════ Landscape Illustration Area ═══════ */}
       <div className="relative w-full h-[280px] sm:h-[340px]">
-        {/* Sky gradient (matches the teal misty reference sky) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f4f6f9] via-[#bafff9] to-[#0f2e2b]" />
+        {/* Sky gradient (matches misty reference sky) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F7F3EB] via-[#E8DCC8]/60 to-[#141C2E]" />
 
-        {/* Subtle horizon haze — no clouds, just a thin atmospheric band */}
+        {/* Subtle horizon haze — thin atmospheric band */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 0%, rgba(60,130,120,0.12) 35%, rgba(60,130,120,0.06) 50%, transparent 65%)",
+              "linear-gradient(to bottom, transparent 0%, rgba(198,167,94,0.12) 35%, rgba(198,167,94,0.06) 50%, transparent 65%)",
           }}
         />
 
@@ -211,7 +213,7 @@ export const Footer: React.FC = () => {
         {/* Tree layers — back (lighter) to front (darkest) */}
         <TreeLine
           y={285}
-          color="#1a4a44"
+          color="#283654"
           count={55}
           minH={30}
           maxH={60}
@@ -221,7 +223,7 @@ export const Footer: React.FC = () => {
         />
         <TreeLine
           y={300}
-          color="#134038"
+          color="#1F2A44"
           count={65}
           minH={35}
           maxH={70}
@@ -231,7 +233,7 @@ export const Footer: React.FC = () => {
         />
         <TreeLine
           y={310}
-          color="#0d302b"
+          color="#192338"
           count={50}
           minH={45}
           maxH={85}
@@ -241,7 +243,7 @@ export const Footer: React.FC = () => {
         />
         <TreeLine
           y={318}
-          color="#081f1c"
+          color="#141C2E"
           count={70}
           minH={40}
           maxH={90}
@@ -254,7 +256,7 @@ export const Footer: React.FC = () => {
         <Watchtower />
 
         {/* Bottom fade into footer background */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#0a1a1a] to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#141C2E] to-transparent pointer-events-none" />
       </div>
 
       {/* ═══════ Link Columns & Contact Area ═══════ */}
@@ -265,7 +267,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-sm font-bold text-white tracking-wide uppercase">
               Links
             </h4>
-            <div className="h-[1.5px] w-10 bg-[#1998a1]" />
+            <div className="h-[1.5px] w-10 bg-[#C6A75E]" />
             <ul className="space-y-2 text-xs">
               {[
                 "Healthcare & Nutrition",
@@ -275,10 +277,10 @@ export const Footer: React.FC = () => {
                 <li key={idx}>
                   <a
                     href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="hover:text-[#52d6e0] transition-colors inline-flex items-center gap-1 group"
+                    className="hover:text-[#C6A75E] transition-colors inline-flex items-center gap-1 group"
                   >
                     <span>{link}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#52d6e0]" />
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#C6A75E]" />
                   </a>
                 </li>
               ))}
@@ -290,7 +292,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-sm font-bold text-white tracking-wide uppercase">
               Links
             </h4>
-            <div className="h-[1.5px] w-10 bg-[#1998a1]" />
+            <div className="h-[1.5px] w-10 bg-[#C6A75E]" />
             <ul className="space-y-2 text-xs">
               {[
                 "PMKKKY Guidelines",
@@ -300,10 +302,10 @@ export const Footer: React.FC = () => {
                 <li key={idx}>
                   <a
                     href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="hover:text-[#52d6e0] transition-colors inline-flex items-center gap-1 group"
+                    className="hover:text-[#C6A75E] transition-colors inline-flex items-center gap-1 group"
                   >
                     <span>{link}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#52d6e0]" />
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#C6A75E]" />
                   </a>
                 </li>
               ))}
@@ -315,29 +317,29 @@ export const Footer: React.FC = () => {
             <h4 className="text-sm font-bold text-white tracking-wide uppercase">
               Links
             </h4>
-            <div className="h-[1.5px] w-10 bg-[#1998a1]" />
+            <div className="h-[1.5px] w-10 bg-[#C6A75E]" />
             <ul className="space-y-2 text-xs">
               {["RTI Disclosures", "Privacy Policy", "Terms & Conditions"].map(
                 (link, idx) => (
                   <li key={idx}>
                     <a
                       href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
-                      className="hover:text-[#52d6e0] transition-colors inline-flex items-center gap-1 group"
+                      className="hover:text-[#C6A75E] transition-colors inline-flex items-center gap-1 group"
                     >
                       <span>{link}</span>
-                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#52d6e0]" />
+                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#C6A75E]" />
                     </a>
                   </li>
                 ),
               )}
             </ul>
-            {/* Circular social/action buttons (matching reference) */}
+            {/* Circular social/action buttons */}
             <div className="flex items-center gap-3 pt-2">
               {[Mail, MapPin, PhoneCall].map((Icon, idx) => (
                 <a
                   key={idx}
                   href="#"
-                  className="w-9 h-9 rounded-full border border-white/25 hover:border-[#dbaf25] bg-white/5 hover:bg-[#dbaf25] flex items-center justify-center text-white hover:text-[#184c5d] transition-all duration-300 hover:scale-110"
+                  className="w-9 h-9 rounded-full border border-white/25 hover:border-[#C6A75E] bg-white/5 hover:bg-[#C6A75E] flex items-center justify-center text-white hover:text-[#1F2A44] transition-all duration-300 hover:scale-110"
                 >
                   <Icon className="w-3.5 h-3.5" />
                 </a>
@@ -345,14 +347,14 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 4: Brand + Contact (right-aligned like reference) */}
+          {/* Column 4: Brand + Contact */}
           <div className="lg:col-span-4 space-y-3 lg:text-right">
             <h4 className="text-lg font-bold text-white tracking-wide">
-              DMF Portal<span className="text-[#dbaf25]">.Trust</span>
+              DMF Portal<span className="text-[#C6A75E]">.Trust</span>
             </h4>
             <div className="space-y-1 text-xs text-slate-300 leading-relaxed">
               <p className="flex items-center gap-1.5 lg:justify-end">
-                <MapPin className="w-3.5 h-3.5 text-[#52d6e0] flex-shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-[#C6A75E] flex-shrink-0" />
                 <span>Collectorate Administrative Complex</span>
               </p>
               <p className="flex items-center gap-1.5 lg:justify-end">
@@ -361,11 +363,11 @@ export const Footer: React.FC = () => {
                 </span>
               </p>
               <p className="flex items-center gap-1.5 lg:justify-end pt-1">
-                <PhoneCall className="w-3.5 h-3.5 text-[#dbaf25] flex-shrink-0" />
+                <PhoneCall className="w-3.5 h-3.5 text-[#C6A75E] flex-shrink-0" />
                 <span>tel: +91 1800 345 6789</span>
               </p>
               <p className="flex items-center gap-1.5 lg:justify-end">
-                <Mail className="w-3.5 h-3.5 text-[#52d6e0] flex-shrink-0" />
+                <Mail className="w-3.5 h-3.5 text-[#C6A75E] flex-shrink-0" />
                 <span>email: support@dmftrust.gov.in</span>
               </p>
             </div>
@@ -377,11 +379,11 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-400 font-medium">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-md bg-[#184c5d] flex items-center justify-center shadow-md border border-[#dbaf25]/40">
-                <Pickaxe className="w-3.5 h-3.5 text-[#dbaf25]" />
+              <div className="w-6 h-6 rounded-md bg-[#1F2A44] flex items-center justify-center shadow-md border border-[#C6A75E]/40">
+                <Pickaxe className="w-3.5 h-3.5 text-[#C6A75E]" />
               </div>
               <span className="font-extrabold text-white tracking-wider text-xs">
-                DMF Portal<span className="text-[#dbaf25]">.Trust</span>
+                DMF Portal<span className="text-[#C6A75E]">.Trust</span>
               </span>
             </div>
 

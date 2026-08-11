@@ -82,25 +82,25 @@ export const StatsBanner: React.FC = () => {
 
   const stats = [
     {
-      icon: <Coins className="w-7 h-7 text-[#dbaf25]" />,
+      icon: <Coins className="w-7 h-7 text-[#C6A75E]" />,
       value: "₹850 Cr+",
       label: "ROYALTY FUNDS ALLOCATED",
       subtext: "Statutory MMDR Act Grants",
     },
     {
-      icon: <HardHat className="w-7 h-7 text-[#dbaf25]" />,
+      icon: <HardHat className="w-7 h-7 text-[#C6A75E]" />,
       value: "1,420+",
       label: "SANCTIONED PROJECTS",
       subtext: "Across 5 Priority Sectors",
     },
     {
-      icon: <Users className="w-7 h-7 text-[#dbaf25]" />,
+      icon: <Users className="w-7 h-7 text-[#C6A75E]" />,
       value: "450k+",
       label: "MINING BENEFICIARIES",
       subtext: "Direct Family Impact",
     },
     {
-      icon: <LandPlot className="w-7 h-7 text-[#dbaf25]" />,
+      icon: <LandPlot className="w-7 h-7 text-[#C6A75E]" />,
       value: "185+",
       label: "VILLAGES TRANSFORMED",
       subtext: "Geo-Tagged Mining Belts",
@@ -111,10 +111,10 @@ export const StatsBanner: React.FC = () => {
     <section
       ref={containerRef}
       id="stats"
-      className="relative pt-10 pb-32 bg-[#103642] overflow-hidden"
+      className="relative pt-10 pb-32 bg-[#141C2E] overflow-hidden"
       style={{
         boxShadow:
-          "0 -8px 30px rgba(0,0,0,0.45), 0 8px 30px rgba(0,0,0,0.45), inset 0 0 60px rgba(219,175,37,0.08)",
+          "0 -8px 30px rgba(0,0,0,0.45), 0 8px 30px rgba(0,0,0,0.45), inset 0 0 60px rgba(198,167,94,0.08)",
       }}
     >
       {/* Parallax Background Image Layer */}
@@ -128,15 +128,15 @@ export const StatsBanner: React.FC = () => {
           className="w-full h-full object-cover object-center scale-110 filter brightness-75 contrast-125"
         />
         {/* Deep Gradient Overlays for Readability & Clean Tone */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#103642]/95 via-[#184c5d]/85 to-[#103642]/95" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#103642]/60 via-transparent to-[#103642]/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#141C2E]/95 via-[#1F2A44]/85 to-[#141C2E]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#141C2E]/60 via-transparent to-[#141C2E]/90" />
 
         {/* Subtle Decorative Matrix Grid Overlay */}
         <div
           className="absolute inset-0 opacity-15 pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(#dbaf25 1.5px, transparent 1.5px)",
+              "radial-gradient(#C6A75E 1.5px, transparent 1.5px)",
             backgroundSize: "32px 32px",
           }}
         />
@@ -154,17 +154,17 @@ export const StatsBanner: React.FC = () => {
               whileHover={{ y: -6, scale: 1.02 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="group bg-[#184c5d]/90 backdrop-blur-xl rounded-2xl p-6 transition-all duration-300 shadow-xl border border-[#dbaf25]/30 hover:border-[#dbaf25] hover:shadow-2xl hover:shadow-[#dbaf25]/25 relative overflow-hidden"
+              className="group bg-[#283654]/90 backdrop-blur-xl rounded-2xl p-6 transition-all duration-300 shadow-xl border border-[#C6A75E]/30 hover:border-[#C6A75E] hover:shadow-2xl hover:shadow-[#C6A75E]/25 relative overflow-hidden"
             >
               {/* Corner Glow Accent */}
-              <div className="absolute -top-10 -right-10 w-24 h-24 bg-[#dbaf25]/30 rounded-full blur-2xl group-hover:bg-[#dbaf25]/50 transition-all" />
+              <div className="absolute -top-10 -right-10 w-24 h-24 bg-[#C6A75E]/30 rounded-full blur-2xl group-hover:bg-[#C6A75E]/50 transition-all" />
 
               <div className="flex items-start gap-4 relative z-10">
-                <div className="w-14 h-14 rounded-xl bg-[#dbaf25]/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all shadow-md border border-[#dbaf25]/40">
+                <div className="w-14 h-14 rounded-xl bg-[#C6A75E]/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all shadow-md border border-[#C6A75E]/40">
                   {stat.icon}
                 </div>
                 <div>
-                  <div className="text-3xl sm:text-4xl font-black text-[#dbaf25] tracking-tight group-hover:text-white transition-colors">
+                  <div className="text-3xl sm:text-4xl font-black text-[#C6A75E] tracking-tight group-hover:text-white transition-colors">
                     {stat.value}
                   </div>
                   <div className="text-xs font-extrabold text-slate-200 uppercase tracking-wider mt-1 leading-snug">

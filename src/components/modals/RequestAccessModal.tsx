@@ -30,11 +30,11 @@ export const RequestAccessModal: React.FC<RequestAccessModalProps> = ({ open, on
         
         {/* Header */}
         <div className="flex items-center gap-4 border-b border-slate-100 pb-4">
-          <div className="w-12 h-12 rounded-2xl bg-[#1998a1]/10 text-[#1998a1] flex items-center justify-center">
-            <Pickaxe className="w-7 h-7" />
+          <div className="w-12 h-12 rounded-2xl bg-[#C6A75E]/20 text-[#C6A75E] flex items-center justify-center border border-[#C6A75E]/40">
+            <Pickaxe className="w-7 h-7 text-[#C6A75E]" />
           </div>
           <div>
-            <h3 className="text-xl font-extrabold text-[#184c5d]">
+            <h3 className="text-xl font-extrabold text-[#1F2A44]">
               DMF Royalty & Project Access Portal
             </h3>
             <p className="text-xs text-slate-500 font-medium">
@@ -94,8 +94,8 @@ export const RequestAccessModal: React.FC<RequestAccessModalProps> = ({ open, on
               type="primary" 
               htmlType="submit" 
               size="large"
-              icon={<Lock className="w-4 h-4 ml-1" />}
-              className="!bg-[#1998a1] hover:!bg-[#15828a] !h-12 !px-8 !font-bold !rounded-xl !shadow-lg"
+              icon={<Lock className="w-4 h-4 ml-1 text-[#1F2A44]" />}
+              className="!bg-[#C6A75E] hover:!bg-[#B3934B] !text-[#1F2A44] !h-12 !px-8 !font-extrabold !rounded-xl !shadow-lg shadow-[#C6A75E]/30"
             >
               Submit Portal Request
             </Button>

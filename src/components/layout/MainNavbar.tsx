@@ -25,7 +25,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
   ];
 
   return (
-    <header className="main-nav-bar sticky top-0 z-50 border-b border-white/20 backdrop-blur-md bg-gradient-to-r from-[#184c5d] via-[#1998a1] to-[#103642] shadow-xl">
+    <header className="main-nav-bar sticky top-0 z-50 border-b border-[#C6A75E]/30 backdrop-blur-md bg-gradient-to-r from-[#1F2A44] via-[#283654] to-[#1F2A44] shadow-xl">
       <div className="w-full px-6 sm:px-10 lg:px-12 flex items-center justify-between h-20">
         
         {/* Brand Logo */}
@@ -33,19 +33,19 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
           onClick={() => onNavigate('home')}
           className="flex items-center gap-3 cursor-pointer group"
         >
-          <div className="w-11 h-11 rounded-xl bg-[#184c5d] flex items-center justify-center shadow-lg shadow-[#184c5d]/40 group-hover:scale-105 transition-transform border border-white/20">
-            <Pickaxe className="w-6 h-6 text-[#dbaf25]" />
+          <div className="w-11 h-11 rounded-xl bg-[#141C2E] flex items-center justify-center shadow-lg shadow-black/30 group-hover:scale-105 transition-transform border border-[#C6A75E]/40">
+            <Pickaxe className="w-6 h-6 text-[#C6A75E]" />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xl font-black tracking-tight text-white font-['Plus_Jakarta_Sans']">
                 DMF PORTAL
               </span>
-              <span className="text-[10px] font-black tracking-widest px-1.5 py-0.5 rounded bg-[#dbaf25] text-[#184c5d] border border-[#dbaf25] uppercase shadow-[0_0_8px_rgba(219,175,37,0.5)]">
+              <span className="text-[10px] font-black tracking-widest px-1.5 py-0.5 rounded bg-[#C6A75E] text-[#1F2A44] border border-[#C6A75E] uppercase shadow-[0_0_8px_rgba(198,167,94,0.4)]">
                 TRUST
               </span>
             </div>
-            <p className="text-[11px] font-semibold text-slate-100 tracking-wide">
+            <p className="text-[11px] font-semibold text-slate-200 tracking-wide">
               District Mineral Foundation
             </p>
           </div>
@@ -58,7 +58,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
               key={link.id}
               onClick={() => onNavigate(link.id)}
               className={`nav-link text-sm font-bold tracking-wide transition-colors ${
-                activeSection === link.id ? 'active text-white font-extrabold' : 'text-slate-100 hover:text-white'
+                activeSection === link.id ? 'active text-[#C6A75E] font-extrabold' : 'text-slate-100 hover:text-[#E8DCC8]'
               }`}
             >
               {link.label}
@@ -68,19 +68,19 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
         {/* Connected Dual-Pill CTA Action Buttons (Login & Register) */}
         <div className="hidden lg:flex items-center">
-          <div className="inline-flex rounded-xl p-0.5 bg-[#103642] border border-white/40 shadow-xl backdrop-blur-md overflow-hidden">
+          <div className="inline-flex rounded-xl p-0.5 bg-[#141C2E] border border-[#C6A75E]/40 shadow-xl backdrop-blur-md overflow-hidden">
             <button
               onClick={onRequestAccess}
-              className="flex items-center gap-1.5 px-5 py-2 text-xs font-black text-[#184c5d] bg-white hover:bg-slate-100 rounded-l-lg border-r border-[#184c5d]/20 transition-all shadow-sm active:scale-95 cursor-pointer"
+              className="flex items-center gap-1.5 px-5 py-2 text-xs font-black text-[#1F2A44] bg-[#E8DCC8] hover:bg-[#d8ccb8] rounded-l-lg border-r border-[#1F2A44]/20 transition-all shadow-sm active:scale-95 cursor-pointer"
             >
-              <LogIn className="w-4 h-4 text-[#184c5d]" />
+              <LogIn className="w-4 h-4 text-[#1F2A44]" />
               <span>Login</span>
             </button>
             <button
               onClick={onRequestAccess}
-              className="flex items-center gap-1.5 px-5 py-2 text-xs font-black text-[#184c5d] bg-gradient-to-r from-[#dbaf25] to-[#f5d76e] hover:from-[#c49a1d] hover:to-[#dbaf25] rounded-r-lg transition-all shadow-sm active:scale-95 cursor-pointer"
+              className="flex items-center gap-1.5 px-5 py-2 text-xs font-black text-[#1F2A44] bg-[#C6A75E] hover:bg-[#B3934B] rounded-r-lg transition-all shadow-sm active:scale-95 cursor-pointer"
             >
-              <UserPlus className="w-4 h-4 text-[#184c5d]" />
+              <UserPlus className="w-4 h-4 text-[#1F2A44]" />
               <span>Register</span>
             </button>
           </div>
@@ -89,7 +89,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
         {/* Mobile Hamburger Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden text-slate-200 hover:text-white p-2 rounded-lg bg-slate-800/50"
+          className="lg:hidden text-slate-200 hover:text-white p-2 rounded-lg bg-[#141C2E]"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -98,7 +98,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#103642] border-b border-slate-700 px-6 py-6 space-y-4 animate-fadeIn">
+        <div className="lg:hidden bg-[#141C2E] border-b border-[#C6A75E]/30 px-6 py-6 space-y-4 animate-fadeIn">
           <nav className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <button
@@ -107,22 +107,22 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                   onNavigate(link.id);
                   setMobileMenuOpen(false);
                 }}
-                className="text-left text-slate-200 hover:text-white text-base font-semibold py-2 border-b border-slate-700/60"
+                className="text-left text-slate-200 hover:text-[#C6A75E] text-base font-semibold py-2 border-b border-slate-700/60"
               >
                 {link.label}
               </button>
             ))}
           </nav>
           <div className="pt-2">
-            <div className="flex w-full rounded-xl p-0.5 bg-[#103642] border border-white/40 shadow-lg overflow-hidden">
+            <div className="flex w-full rounded-xl p-0.5 bg-[#141C2E] border border-[#C6A75E]/40 shadow-lg overflow-hidden">
               <button
                 onClick={() => {
                   onRequestAccess();
                   setMobileMenuOpen(false);
                 }}
-                className="flex-1 flex items-center justify-center gap-2 py-3 text-sm font-black text-[#184c5d] bg-white rounded-l-lg border-r border-[#184c5d]/20"
+                className="flex-1 flex items-center justify-center gap-2 py-3 text-sm font-black text-[#1F2A44] bg-[#E8DCC8] rounded-l-lg border-r border-[#1F2A44]/20"
               >
-                <LogIn className="w-4 h-4 text-[#184c5d]" />
+                <LogIn className="w-4 h-4 text-[#1F2A44]" />
                 <span>Login</span>
               </button>
               <button
@@ -130,9 +130,9 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
                   onRequestAccess();
                   setMobileMenuOpen(false);
                 }}
-                className="flex-1 flex items-center justify-center gap-2 py-3 text-sm font-black text-[#184c5d] bg-gradient-to-r from-[#dbaf25] to-[#f5d76e] rounded-r-lg"
+                className="flex-1 flex items-center justify-center gap-2 py-3 text-sm font-black text-[#1F2A44] bg-[#C6A75E] rounded-r-lg"
               >
-                <UserPlus className="w-4 h-4 text-[#184c5d]" />
+                <UserPlus className="w-4 h-4 text-[#1F2A44]" />
                 <span>Register</span>
               </button>
             </div>

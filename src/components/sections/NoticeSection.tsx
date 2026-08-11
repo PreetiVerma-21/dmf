@@ -234,13 +234,13 @@ export const NoticeSection: React.FC = () => {
       id="notices"
       className="relative py-14 overflow-hidden"
       style={{
-        backgroundColor: '#F4F6F9',
+        backgroundColor: '#F7F3EB',
         backgroundImage: `
-          radial-gradient(circle at 50% 0%, rgba(25,152,161,0.06) 0%, transparent 50%),
-          radial-gradient(rgba(25,152,161,0.08) 1.5px, transparent 1.5px)
+          radial-gradient(circle at 50% 0%, rgba(198,167,94,0.08) 0%, transparent 50%),
+          radial-gradient(rgba(198,167,94,0.12) 1.5px, transparent 1.5px)
         `,
         backgroundSize: '100% 100%, 28px 28px',
-        boxShadow: '0 12px 30px -5px rgba(0,0,0,0.12), 0 4px 10px -2px rgba(25,152,161,0.08)',
+        boxShadow: '0 12px 30px -5px rgba(0,0,0,0.12), 0 4px 10px -2px rgba(198,167,94,0.08)',
       }}
     >
       {/* Soft top / bottom edge gradients */}
@@ -257,14 +257,14 @@ export const NoticeSection: React.FC = () => {
           className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8"
         >
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1998a1]/10 border border-[#1998a1]/20 rounded-full text-[#1998a1] text-[11px] font-extrabold uppercase tracking-widest mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#C6A75E]/15 border border-[#C6A75E]/40 rounded-full text-[#C6A75E] text-[11px] font-extrabold uppercase tracking-widest mb-3">
               <Bell className="w-3 h-3" />
               <span>Notices & Announcements</span>
               <LiveDot />
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#184c5d] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-black text-[#1F2A44] tracking-tight">
               Latest Official{' '}
-              <span className="text-[#1998a1]">Notifications</span>
+              <span className="text-[#C6A75E]">Notifications</span>
             </h2>
           </div>
 
@@ -274,8 +274,8 @@ export const NoticeSection: React.FC = () => {
               onClick={() => setActiveFilter('all')}
               className={`px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all duration-300 ${
                 activeFilter === 'all'
-                  ? 'bg-[#1998a1] text-white shadow-md shadow-[#1998a1]/25'
-                  : 'bg-white text-slate-500 border border-slate-200 hover:border-[#1998a1]/40 hover:text-[#1998a1]'
+                  ? 'bg-[#C6A75E] text-[#1F2A44] shadow-md shadow-[#C6A75E]/25 font-black'
+                  : 'bg-white text-slate-600 border border-slate-200 hover:border-[#C6A75E]/60 hover:text-[#C6A75E]'
               }`}
             >
               All
@@ -283,53 +283,42 @@ export const NoticeSection: React.FC = () => {
             {ALL_CATEGORIES.map((cat) => {
               const meta = CATEGORY_META[cat];
               const isActive = activeFilter === cat;
+
               return (
                 <button
                   key={cat}
                   onClick={() => setActiveFilter(cat)}
-                  className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all duration-300 ${
+                  className={`px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-1 ${
                     isActive
-                      ? 'text-white shadow-md'
-                      : 'bg-white text-slate-500 border border-slate-200 hover:border-[#00796B]/40 hover:text-[#00796B]'
+                      ? 'bg-[#1F2A44] text-[#C6A75E] shadow-md border border-[#C6A75E]/40'
+                      : 'bg-white text-slate-600 border border-slate-200 hover:border-[#C6A75E]/60 hover:text-[#C6A75E]'
                   }`}
-                  style={
-                    isActive
-                      ? { backgroundColor: meta.color, boxShadow: `0 4px 12px ${meta.bg}` }
-                      : undefined
-                  }
                 >
                   {meta.icon}
-                  {meta.label}
+                  <span>{meta.label}</span>
                 </button>
               );
             })}
           </div>
         </motion.div>
 
-        {/* ═══ Main Content: 2-col layout ═══ */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-          {/* Left: Featured Notice + Countdown (stacked) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: 0.05 }}
-            className="lg:col-span-5 flex flex-col gap-4"
-          >
-            {/* Featured Auto-Rotating Notice */}
+        {/* ═══ Main Notice Area: Grid layout ═══ */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* Left Column: Featured Highlight Carousel Box */}
+          <div className="lg:col-span-5 flex flex-col">
             <div
               className="relative bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex-1"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
               {/* Decorative corner accent */}
-              <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#dbaf25]/10 rounded-full blur-xl" />
+              <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#C6A75E]/10 rounded-full blur-xl" />
 
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-1.5">
-                    <Megaphone className="w-3.5 h-3.5 text-[#dbaf25]" />
-                    <span className="text-[10px] font-extrabold text-[#dbaf25] uppercase tracking-widest">
+                    <Megaphone className="w-3.5 h-3.5 text-[#C6A75E]" />
+                    <span className="text-[10px] font-extrabold text-[#C6A75E] uppercase tracking-widest">
                       Featured
                     </span>
                   </div>
@@ -340,7 +329,7 @@ export const NoticeSection: React.FC = () => {
                         onClick={() => setHighlightIdx(i)}
                         className={`h-1.5 rounded-full transition-all ${
                           i === highlightIdx
-                            ? 'bg-[#1998a1] w-4'
+                            ? 'bg-[#C6A75E] w-4'
                             : 'bg-slate-200 w-1.5 hover:bg-slate-300'
                         }`}
                       />
@@ -367,7 +356,7 @@ export const NoticeSection: React.FC = () => {
                       {highlightMeta.icon}
                       {highlightMeta.label}
                       {highlightedNotice.isNew && (
-                        <span className="ml-1 text-[9px] bg-[#dbaf25] text-[#184c5d] font-black px-1.5 rounded uppercase">
+                        <span className="ml-1 text-[9px] bg-[#C6A75E] text-[#1F2A44] font-black px-1.5 rounded uppercase">
                           NEW
                         </span>
                       )}
@@ -443,7 +432,7 @@ export const NoticeSection: React.FC = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right: Notice List */}
           <div className="lg:col-span-7 flex flex-col gap-3">

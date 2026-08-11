@@ -82,13 +82,13 @@ export const DepartmentServices: React.FC<DepartmentServicesProps> = ({
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#1998a1]/10 border border-[#1998a1]/30 rounded-full text-[#1998a1] text-xs font-bold uppercase tracking-widest mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#dbaf25]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#C6A75E]/15 border border-[#C6A75E]/40 rounded-full text-[#C6A75E] text-xs font-extrabold uppercase tracking-widest mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-[#C6A75E]" />
             <span>PMKKKY MANDATED SECTORS</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            <span className="text-[#184c5d]">DMF High Priority </span>
-            <span className="bg-gradient-to-r from-[#1998a1] via-[#184c5d] to-[#1998a1] bg-clip-text text-transparent">
+            <span className="text-[#1F2A44]">DMF High Priority </span>
+            <span className="bg-gradient-to-r from-[#C6A75E] via-[#1F2A44] to-[#C6A75E] bg-clip-text text-transparent">
               Focus Areas
             </span>
           </h2>
@@ -109,14 +109,14 @@ export const DepartmentServices: React.FC<DepartmentServicesProps> = ({
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
               onClick={() => onSelectDepartment(dept)}
-              className="group bg-white relative rounded-2xl border border-slate-200/90 shadow-md shadow-slate-200/60 overflow-hidden flex flex-col justify-between cursor-pointer transition-all duration-300 hover:shadow-2xl hover:shadow-[#1998a1]/20 hover:border-[#1998a1]/40"
+              className="group bg-white relative rounded-2xl border border-slate-200/90 shadow-md shadow-slate-200/60 overflow-hidden flex flex-col justify-between cursor-pointer transition-all duration-300 hover:shadow-2xl hover:shadow-[#C6A75E]/20 hover:border-[#C6A75E]/50"
             >
               {/* Top Vibrant Header Accent Box */}
-              <div className="relative h-20 bg-gradient-to-r from-[#1998a1]/15 via-[#1998a1]/5 to-transparent p-4 flex items-center justify-between border-b border-slate-100">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1998a1] to-[#184c5d] text-white flex items-center justify-center shadow-lg shadow-[#1998a1]/25 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+              <div className="relative h-20 bg-gradient-to-r from-[#C6A75E]/20 via-[#E8DCC8]/30 to-transparent p-4 flex items-center justify-between border-b border-slate-100">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1F2A44] to-[#283654] text-[#C6A75E] flex items-center justify-center shadow-lg shadow-black/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                   {dept.icon}
                 </div>
-                <span className="text-[10px] font-black text-[#184c5d] bg-[#dbaf25] border border-[#dbaf25] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-xs">
+                <span className="text-[10px] font-black text-[#1F2A44] bg-[#C6A75E] border border-[#C6A75E] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-xs">
                   {dept.tag}
                 </span>
               </div>
@@ -124,7 +124,7 @@ export const DepartmentServices: React.FC<DepartmentServicesProps> = ({
               {/* Card Body Content */}
               <div className="p-5 flex-grow flex flex-col justify-between space-y-3">
                 <div>
-                  <h3 className="text-base font-extrabold text-[#184c5d] group-hover:text-[#1998a1] transition-colors leading-snug">
+                  <h3 className="text-base font-extrabold text-[#1F2A44] group-hover:text-[#C6A75E] transition-colors leading-snug">
                     {dept.title}
                   </h3>
                   <p className="text-xs text-slate-500 mt-2 leading-relaxed line-clamp-3">
@@ -134,8 +134,8 @@ export const DepartmentServices: React.FC<DepartmentServicesProps> = ({
 
                 {/* Metric Badge Pill */}
                 <div className="pt-2">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 group-hover:bg-[#1998a1]/10 rounded-lg text-[11px] font-bold text-slate-600 group-hover:text-[#1998a1] transition-colors">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#1998a1]"></span>
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 group-hover:bg-[#C6A75E]/15 rounded-lg text-[11px] font-bold text-slate-600 group-hover:text-[#C6A75E] transition-colors">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C6A75E]"></span>
                     <span>{dept.servicesCount} Projects</span>
                   </div>
                 </div>

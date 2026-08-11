@@ -41,7 +41,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle at 50% 40%, rgba(0, 121, 107, 0.2) 0%, transparent 70%), linear-gradient(to bottom, rgba(11, 25, 44, 0.5) 0%, rgba(9, 21, 36, 0.75) 100%)",
+            "radial-gradient(circle at 50% 40%, rgba(198, 167, 94, 0.2) 0%, transparent 70%), linear-gradient(to bottom, rgba(31, 42, 68, 0.65) 0%, rgba(20, 28, 46, 0.85) 100%)",
         }}
       />
 
@@ -57,21 +57,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
           >
             {/* Header Text */}
             <div className="space-y-1 opacity-90 select-none">
-              <h4 className="text-xl sm:text-2xl font-black text-slate-300 tracking-wider uppercase font-sans">
-                DISTRICT MINERAL FOUNDATION
+              <h4 className="text-xl sm:text-2xl font-black text-[#E8DCC8] tracking-wider uppercase font-sans">
+                DISTRICT MINERAL FOUNDATION TRUST
               </h4>
-              <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-200 tracking-tight">
-                MINING TRUST PORTAL
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#C6A75E] tracking-tight">
+                GOVERNMENT OF INDIA REGULATORY PORTAL
               </h3>
-              <p className="text-sm font-semibold text-slate-400 tracking-wide">
+              <p className="text-sm font-semibold text-slate-300 tracking-wide">
                 Pradhan Mantri Khanij Kshetra Kalyan Yojana (PMKKKY)
               </p>
             </div>
 
             {/* Pill Badge */}
             <div className="pt-2">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-[#dbaf25]/20 border border-[#dbaf25]/60 rounded-full text-[#dbaf25] text-xs font-bold uppercase tracking-wider backdrop-blur-md">
-                <span className="w-2 h-2 rounded-full bg-[#dbaf25] shadow-[0_0_8px_#dbaf25]"></span>
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-[#C6A75E]/20 border border-[#C6A75E]/60 rounded-full text-[#C6A75E] text-xs font-bold uppercase tracking-wider backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-[#C6A75E] shadow-[0_0_8px_#C6A75E]"></span>
                 <span>MINING BENEFICIARY TRUST GOVERNANCE</span>
               </div>
             </div>
@@ -79,7 +79,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold leading-[1.12] tracking-tight">
               <span className="text-white">Empowering Communities & </span>
-              <span className="bg-gradient-to-r from-[#52d6e0] via-[#dbaf25] to-[#38bdf8] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#E8DCC8] via-[#C6A75E] to-[#E8DCC8] bg-clip-text text-transparent">
                 Sustainable Mining Zones
               </span>
             </h1>
@@ -97,9 +97,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
                 type="primary"
                 size="large"
                 onClick={onLearnMore}
-                icon={<ArrowRight className="w-5 h-5 ml-1" />}
+                icon={<ArrowRight className="w-5 h-5 ml-1 text-[#1F2A44]" />}
                 iconPosition="end"
-                className="!bg-[#1998a1] hover:!bg-[#15828a] !h-13 !px-8 !text-base !font-bold !rounded-xl !shadow-xl shadow-[#1998a1]/40 flex items-center transition-transform hover:scale-105"
+                className="!bg-[#C6A75E] hover:!bg-[#B3934B] !text-[#1F2A44] !h-13 !px-8 !text-base !font-black !rounded-xl !shadow-xl shadow-[#C6A75E]/30 flex items-center transition-transform hover:scale-105"
               >
                 Explore Trust Projects
               </Button>
@@ -121,12 +121,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
               />
 
               {/* Floating 100% Transparent Trust Badge Overlay */}
-              <div className="absolute bottom-6 left-6 bg-[#184c5d] text-[#FFFFFF] px-6 py-4 rounded-xl flex items-center gap-4 shadow-xl border border-[#dbaf25]/40 backdrop-blur-md">
-                <div className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center border border-[#dbaf25]/30">
-                  <ShieldCheck className="w-6 h-6 text-[#dbaf25]" />
+              <div className="absolute bottom-6 left-6 bg-[#1F2A44] text-[#FFFFFF] px-6 py-4 rounded-xl flex items-center gap-4 shadow-xl border border-[#C6A75E]/50 backdrop-blur-md">
+                <div className="w-11 h-11 bg-[#C6A75E]/20 rounded-lg flex items-center justify-center border border-[#C6A75E]/40">
+                  <ShieldCheck className="w-6 h-6 text-[#C6A75E]" />
                 </div>
                 <div>
-                  <div className="text-2xl font-black leading-none text-[#dbaf25]">100%</div>
+                  <div className="text-2xl font-black leading-none text-[#C6A75E]">100%</div>
                   <div className="text-xs font-bold text-slate-100 uppercase tracking-wider mt-1">
                     Transparent Mineral Trust
                   </div>
@@ -175,11 +175,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
 
           {/* Strong static base theme gradient line */}
           <linearGradient id="curveGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#184c5d" stopOpacity="0.9" />
-            <stop offset="20%" stopColor="#1998a1" stopOpacity="1" />
-            <stop offset="50%" stopColor="#52d6e0" stopOpacity="1" />
-            <stop offset="80%" stopColor="#1998a1" stopOpacity="1" />
-            <stop offset="100%" stopColor="#184c5d" stopOpacity="0.9" />
+            <stop offset="0%" stopColor="#1F2A44" stopOpacity="0.9" />
+            <stop offset="20%" stopColor="#C6A75E" stopOpacity="1" />
+            <stop offset="50%" stopColor="#E8DCC8" stopOpacity="1" />
+            <stop offset="80%" stopColor="#C6A75E" stopOpacity="1" />
+            <stop offset="100%" stopColor="#1F2A44" stopOpacity="0.9" />
           </linearGradient>
         </defs>
 
@@ -187,7 +187,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
         <path
           d="M 0 0 Q 720 95 1440 0"
           fill="none"
-          stroke="#1998a1"
+          stroke="#C6A75E"
           strokeWidth="10"
           opacity="0.4"
         />

@@ -32,12 +32,12 @@ export const AboutPortalSection: React.FC<AboutPortalSectionProps> = ({
             className="lg:col-span-6 space-y-6"
           >
             <div>
-              <span className="text-xs font-bold text-[#1998a1] tracking-[0.2em] uppercase mb-2 block">
+              <span className="text-xs font-bold text-[#C6A75E] tracking-[0.2em] uppercase mb-2 block">
                 MINES & MINERALS REGULATORY COMPLIANCE
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-                <span className="text-[#184c5d]">Transforming Mineral Wealth </span>
-                <span className="bg-gradient-to-r from-[#1998a1] via-[#184c5d] to-[#1998a1] bg-clip-text text-transparent">
+                <span className="text-[#1F2A44]">Transforming Mineral Wealth </span>
+                <span className="bg-gradient-to-r from-[#C6A75E] via-[#1F2A44] to-[#C6A75E] bg-clip-text text-transparent">
                   into Sustainable Welfare
                 </span>
               </h2>
@@ -55,10 +55,10 @@ export const AboutPortalSection: React.FC<AboutPortalSectionProps> = ({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               {features.map((feature, idx) => (
                 <div key={idx} className="feature-check-item">
-                  <div className="check-icon-circle">
-                    <Check className="w-3.5 h-3.5" />
+                  <div className="check-icon-circle !bg-[#C6A75E]/20 !text-[#C6A75E]">
+                    <Check className="w-3.5 h-3.5 text-[#C6A75E]" />
                   </div>
-                  <span className="text-sm font-bold text-[#1E293B]">
+                  <span className="text-sm font-bold text-[#1F2A44]">
                     {feature}
                   </span>
                 </div>
@@ -71,17 +71,17 @@ export const AboutPortalSection: React.FC<AboutPortalSectionProps> = ({
                 type="primary"
                 size="large"
                 onClick={onContactUs}
-                icon={<ArrowRight className="w-4 h-4 ml-1" />}
+                icon={<ArrowRight className="w-4 h-4 ml-1 text-[#1F2A44]" />}
                 iconPosition="end"
-                className="!bg-[#1998a1] hover:!bg-[#15828a] !h-12 !px-7 !font-bold !rounded-xl !shadow-lg"
+                className="!bg-[#C6A75E] hover:!bg-[#B3934B] !text-[#1F2A44] !h-12 !px-7 !font-extrabold !rounded-xl !shadow-lg shadow-[#C6A75E]/30"
               >
                 Track Fund Allocation
               </Button>
 
               <div className="flex items-center gap-3 border-l border-slate-200 pl-6 text-xs text-slate-500">
-                <Shield className="w-5 h-5 text-[#1998a1]" />
+                <Shield className="w-5 h-5 text-[#C6A75E]" />
                 <div>
-                  <div className="font-bold text-[#1E293B]">
+                  <div className="font-bold text-[#1F2A44]">
                     CAG Audited Trust
                   </div>
                   <div>PMKKKY Statutory Framework</div>
@@ -106,11 +106,11 @@ export const AboutPortalSection: React.FC<AboutPortalSectionProps> = ({
               />
 
               {/* Floating Badge Card */}
-              <div className="about-badge-card bg-[#184c5d] text-white p-6 rounded-2xl shadow-2xl absolute -bottom-6 -right-6 max-w-[240px] border-2 border-[#dbaf25] shadow-[0_0_20px_rgba(219,175,37,0.35)] backdrop-blur-md">
-                <div className="w-12 h-12 rounded-xl bg-[#dbaf25]/20 border border-[#dbaf25]/40 flex items-center justify-center mb-3">
-                  <Award className="w-7 h-7 text-[#dbaf25]" />
+              <div className="about-badge-card bg-[#1F2A44] text-white p-6 rounded-2xl shadow-2xl absolute -bottom-6 -right-6 max-w-[240px] border-2 border-[#C6A75E] shadow-[0_0_20px_rgba(198,167,94,0.35)] backdrop-blur-md">
+                <div className="w-12 h-12 rounded-xl bg-[#C6A75E]/20 border border-[#C6A75E]/40 flex items-center justify-center mb-3">
+                  <Award className="w-7 h-7 text-[#C6A75E]" />
                 </div>
-                <div className="text-3xl font-black text-[#dbaf25]">₹850+ Cr</div>
+                <div className="text-3xl font-black text-[#C6A75E]">₹850+ Cr</div>
                 <div className="text-xs font-bold text-slate-100 uppercase tracking-wider mt-1">
                   Royalty Deployed
                 </div>

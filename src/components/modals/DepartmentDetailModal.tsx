@@ -29,15 +29,15 @@ export const DepartmentDetailModal: React.FC<DepartmentDetailModalProps> = ({
         
         {/* Header */}
         <div className="flex items-center gap-4 border-b border-slate-100 pb-4">
-          <div className="w-14 h-14 rounded-2xl bg-[#1998a1]/15 text-[#1998a1] flex items-center justify-center flex-shrink-0">
+          <div className="w-14 h-14 rounded-2xl bg-[#C6A75E]/20 text-[#C6A75E] border border-[#C6A75E]/40 flex items-center justify-center flex-shrink-0">
             {department.icon}
           </div>
           <div>
             <div className="flex items-center gap-3">
-              <h3 className="text-2xl font-extrabold text-[#184c5d]">
+              <h3 className="text-2xl font-extrabold text-[#1F2A44]">
                 {department.title}
               </h3>
-              <Badge count={`${department.servicesCount} Sanctioned Projects`} style={{ backgroundColor: '#1998a1' }} />
+              <Badge count={`${department.servicesCount} Sanctioned Projects`} style={{ backgroundColor: '#C6A75E', color: '#1F2A44', fontWeight: 'bold' }} />
             </div>
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1">
               DISTRICT MINERAL FOUNDATION TRUST SECTOR
@@ -51,21 +51,21 @@ export const DepartmentDetailModal: React.FC<DepartmentDetailModalProps> = ({
         </p>
 
         {/* Available Capabilities */}
-        <div className="bg-[#F4F6F9] rounded-2xl p-5 space-y-3 border border-slate-200">
-          <h4 className="text-sm font-bold text-[#184c5d] uppercase tracking-wider">
+        <div className="bg-[#F7F3EB] rounded-2xl p-5 space-y-3 border border-slate-200">
+          <h4 className="text-sm font-bold text-[#1F2A44] uppercase tracking-wider">
             Key DMF Sector Deliverables:
           </h4>
           <ul className="space-y-2 text-sm text-slate-700 font-medium">
             <li className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#1998a1]" />
+              <CheckCircle2 className="w-4 h-4 text-[#C6A75E]" />
               <span>Real-time geo-tagged project tracking & expenditure audit</span>
             </li>
             <li className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#1998a1]" />
+              <CheckCircle2 className="w-4 h-4 text-[#C6A75E]" />
               <span>Direct PMKKKY fund disbursement to accredited execution agencies</span>
             </li>
             <li className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#1998a1]" />
+              <CheckCircle2 className="w-4 h-4 text-[#C6A75E]" />
               <span>Priority focus on high-impact mining affected villages</span>
             </li>
           </ul>
@@ -79,12 +79,12 @@ export const DepartmentDetailModal: React.FC<DepartmentDetailModalProps> = ({
           <Button 
             type="primary" 
             size="large"
-            icon={<ArrowRight className="w-4 h-4 ml-1" />}
+            icon={<ArrowRight className="w-4 h-4 ml-1 text-[#1F2A44]" />}
             onClick={() => {
               onClose();
               onRequestAccess();
             }}
-            className="!bg-[#1998a1] hover:!bg-[#15828a] !h-12 !px-8 !font-bold !rounded-xl !shadow-lg"
+            className="!bg-[#C6A75E] hover:!bg-[#B3934B] !text-[#1F2A44] !h-12 !px-8 !font-extrabold !rounded-xl !shadow-lg shadow-[#C6A75E]/30"
           >
             Track Sector Fund
           </Button>

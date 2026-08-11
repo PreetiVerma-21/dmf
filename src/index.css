@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --navy-dark: #103642;
-  --navy-main: #184c5d;
-  --navy-card: #1f5a6d;
-  --teal-primary: #1998a1;
-  --teal-hover: #15828a;
-  --teal-light: rgba(25, 152, 161, 0.15);
-  --teal-glow: rgba(25, 152, 161, 0.5);
-  --gold-accent: #dbaf25;
-  --gold-hover: #c49a1d;
-  --gray-bg: #F4F6F9;
+  --navy-dark: #141C2E;
+  --navy-main: #1F2A44;
+  --navy-card: #283654;
+  --beige-warm: #E8DCC8;
+  --beige-light: #F7F3EB;
+  --gold-soft: #C6A75E;
+  --gold-hover: #B3934B;
+  --gold-glow: rgba(198, 167, 94, 0.4);
+  --gray-bg: #F7F3EB;
   --gray-text: #64748B;
-  --dark-text: #1E293B;
+  --dark-text: #1F2A44;
   --white: #FFFFFF;
 }
 
@@ -36,20 +35,20 @@ body {
   background: var(--navy-dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--teal-primary);
+  background: var(--gold-soft);
   border-radius: 4px;
 }
 
 /* Header & Navigation Styles */
 .top-header-strip {
-  background-color: #103642;
+  background-color: #141C2E;
   color: rgba(255, 255, 255, 0.85);
   font-size: 13px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(198, 167, 94, 0.2);
 }
 
 .main-nav-bar {
-  background: linear-gradient(135deg, #184c5d 0%, #1998a1 50%, #103642 100%);
+  background: linear-gradient(135deg, #1F2A44 0%, #283654 50%, #1F2A44 100%);
   transition: all 0.3s ease;
 }
 
@@ -79,7 +78,7 @@ body {
 
 /* Hero Section Container & Connected Pattern */
 .hero-section {
-  background: linear-gradient(135deg, #103642 0%, #184c5d 50%, #103642 100%);
+  background: linear-gradient(135deg, #141C2E 0%, #1F2A44 50%, #141C2E 100%);
   position: relative;
   overflow: hidden;
   color: var(--white);
