@@ -17,18 +17,25 @@ import { Footer } from './components/layout/Footer';
 
 import { RequestAccessModal } from './components/modals/RequestAccessModal';
 import { DepartmentDetailModal } from './components/modals/DepartmentDetailModal';
+import { LoginPage } from './components/pages/LoginPage';
 
 export const App: React.FC = () => {
+  const [currentView, setCurrentView] = useState<'home' | 'login'>('home');
   const [requestAccessOpen, setRequestAccessOpen] = useState(false);
   const [selectedDept, setSelectedDept] = useState<DepartmentItem | null>(null);
   const [activeSection, setActiveSection] = useState('home');
 
   const scrollToSection = (sectionId: string) => {
-    setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (currentView !== 'home') {
+      setCurrentView('home');
     }
+    setActiveSection(sectionId);
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   const handleSelectService = (service: ServiceCardData) => {
@@ -41,6 +48,14 @@ export const App: React.FC = () => {
     });
   };
 
+  if (currentView === 'login') {
+    return (
+      <ConfigProvider theme={customTheme}>
+        <LoginPage onBackToHome={() => setCurrentView('home')} />
+      </ConfigProvider>
+    );
+  }
+
   return (
     <ConfigProvider theme={customTheme}>
       <div className="min-h-screen bg-[#F4F6F9] font-['Plus_Jakarta_Sans',sans-serif] text-slate-800 antialiased selection:bg-[#00796B] selection:text-white">
@@ -52,7 +67,7 @@ export const App: React.FC = () => {
         <MainNavbar 
           activeSection={activeSection}
           onNavigate={scrollToSection}
-          onRequestAccess={() => setRequestAccessOpen(true)}
+          onRequestAccess={() => setCurrentView('login')}
         />
 
         <main>
@@ -68,7 +83,7 @@ export const App: React.FC = () => {
 
           {/* About Portal Section with Checkmarks & 20 Years Badge */}
           <AboutPortalSection 
-            onContactUs={() => setRequestAccessOpen(true)}
+            onContactUs={() => setCurrentView('login')}
           />
 
           {/* Stats Metrics Banner */}
@@ -98,7 +113,10 @@ export const App: React.FC = () => {
         <DepartmentDetailModal 
           department={selectedDept}
           onClose={() => setSelectedDept(null)}
-          onRequestAccess={() => setRequestAccessOpen(true)}
+          onRequestAccess={() => {
+            setSelectedDept(null);
+            setCurrentView('login');
+          }}
         />
 
       </div>
