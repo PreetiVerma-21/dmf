@@ -265,7 +265,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-sm font-bold text-white tracking-wide uppercase">
               Links
             </h4>
-            <div className="h-[1.5px] w-10 bg-[#2DD4BF]/60" />
+            <div className="h-[1.5px] w-10 bg-[#1998a1]" />
             <ul className="space-y-2 text-xs">
               {[
                 "Healthcare & Nutrition",
@@ -275,10 +275,10 @@ export const Footer: React.FC = () => {
                 <li key={idx}>
                   <a
                     href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="hover:text-[#2DD4BF] transition-colors inline-flex items-center gap-1 group"
+                    className="hover:text-[#52d6e0] transition-colors inline-flex items-center gap-1 group"
                   >
                     <span>{link}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#2DD4BF]" />
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#52d6e0]" />
                   </a>
                 </li>
               ))}
@@ -290,7 +290,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-sm font-bold text-white tracking-wide uppercase">
               Links
             </h4>
-            <div className="h-[1.5px] w-10 bg-[#2DD4BF]/60" />
+            <div className="h-[1.5px] w-10 bg-[#1998a1]" />
             <ul className="space-y-2 text-xs">
               {[
                 "PMKKKY Guidelines",
@@ -300,10 +300,10 @@ export const Footer: React.FC = () => {
                 <li key={idx}>
                   <a
                     href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="hover:text-[#2DD4BF] transition-colors inline-flex items-center gap-1 group"
+                    className="hover:text-[#52d6e0] transition-colors inline-flex items-center gap-1 group"
                   >
                     <span>{link}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#2DD4BF]" />
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#52d6e0]" />
                   </a>
                 </li>
               ))}
@@ -315,17 +315,17 @@ export const Footer: React.FC = () => {
             <h4 className="text-sm font-bold text-white tracking-wide uppercase">
               Links
             </h4>
-            <div className="h-[1.5px] w-10 bg-[#2DD4BF]/60" />
+            <div className="h-[1.5px] w-10 bg-[#1998a1]" />
             <ul className="space-y-2 text-xs">
               {["RTI Disclosures", "Privacy Policy", "Terms & Conditions"].map(
                 (link, idx) => (
                   <li key={idx}>
                     <a
                       href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
-                      className="hover:text-[#2DD4BF] transition-colors inline-flex items-center gap-1 group"
+                      className="hover:text-[#52d6e0] transition-colors inline-flex items-center gap-1 group"
                     >
                       <span>{link}</span>
-                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#2DD4BF]" />
+                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#52d6e0]" />
                     </a>
                   </li>
                 ),
@@ -337,7 +337,7 @@ export const Footer: React.FC = () => {
                 <a
                   key={idx}
                   href="#"
-                  className="w-9 h-9 rounded-full border border-white/25 hover:border-[#2DD4BF] bg-white/5 hover:bg-[#00796B] flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                  className="w-9 h-9 rounded-full border border-white/25 hover:border-[#dbaf25] bg-white/5 hover:bg-[#dbaf25] flex items-center justify-center text-white hover:text-[#184c5d] transition-all duration-300 hover:scale-110"
                 >
                   <Icon className="w-3.5 h-3.5" />
                 </a>
@@ -348,11 +348,11 @@ export const Footer: React.FC = () => {
           {/* Column 4: Brand + Contact (right-aligned like reference) */}
           <div className="lg:col-span-4 space-y-3 lg:text-right">
             <h4 className="text-lg font-bold text-white tracking-wide">
-              DMF Portal<span className="text-[#2DD4BF]">.Trust</span>
+              DMF Portal<span className="text-[#dbaf25]">.Trust</span>
             </h4>
             <div className="space-y-1 text-xs text-slate-300 leading-relaxed">
               <p className="flex items-center gap-1.5 lg:justify-end">
-                <MapPin className="w-3.5 h-3.5 text-[#2DD4BF] flex-shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-[#52d6e0] flex-shrink-0" />
                 <span>Collectorate Administrative Complex</span>
               </p>
               <p className="flex items-center gap-1.5 lg:justify-end">
@@ -361,11 +361,11 @@ export const Footer: React.FC = () => {
                 </span>
               </p>
               <p className="flex items-center gap-1.5 lg:justify-end pt-1">
-                <PhoneCall className="w-3.5 h-3.5 text-[#2DD4BF] flex-shrink-0" />
+                <PhoneCall className="w-3.5 h-3.5 text-[#dbaf25] flex-shrink-0" />
                 <span>tel: +91 1800 345 6789</span>
               </p>
               <p className="flex items-center gap-1.5 lg:justify-end">
-                <Mail className="w-3.5 h-3.5 text-[#2DD4BF] flex-shrink-0" />
+                <Mail className="w-3.5 h-3.5 text-[#52d6e0] flex-shrink-0" />
                 <span>email: support@dmftrust.gov.in</span>
               </p>
             </div>
@@ -377,11 +377,11 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-400 font-medium">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[#00796B] to-[#004D40] flex items-center justify-center shadow-md">
-                <Pickaxe className="w-3.5 h-3.5 text-[#2DD4BF]" />
+              <div className="w-6 h-6 rounded-md bg-[#184c5d] flex items-center justify-center shadow-md border border-[#dbaf25]/40">
+                <Pickaxe className="w-3.5 h-3.5 text-[#dbaf25]" />
               </div>
               <span className="font-extrabold text-white tracking-wider text-xs">
-                DMF Portal<span className="text-[#2DD4BF]">.Trust</span>
+                DMF Portal<span className="text-[#dbaf25]">.Trust</span>
               </span>
             </div>
 

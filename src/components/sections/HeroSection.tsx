@@ -70,8 +70,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
 
             {/* Pill Badge */}
             <div className="pt-2">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-[#00796B]/30 border border-[#00796B]/60 rounded-full text-[#2DD4BF] text-xs font-bold uppercase tracking-wider backdrop-blur-md">
-                <span className="w-2 h-2 rounded-full bg-[#2DD4BF] shadow-[0_0_8px_#2DD4BF]"></span>
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-[#dbaf25]/20 border border-[#dbaf25]/60 rounded-full text-[#dbaf25] text-xs font-bold uppercase tracking-wider backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-[#dbaf25] shadow-[0_0_8px_#dbaf25]"></span>
                 <span>MINING BENEFICIARY TRUST GOVERNANCE</span>
               </div>
             </div>
@@ -79,7 +79,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold leading-[1.12] tracking-tight">
               <span className="text-white">Empowering Communities & </span>
-              <span className="bg-gradient-to-r from-[#2DD4BF] via-[#14B8A6] to-[#00B4D8] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#52d6e0] via-[#dbaf25] to-[#38bdf8] bg-clip-text text-transparent">
                 Sustainable Mining Zones
               </span>
             </h1>
@@ -99,7 +99,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
                 onClick={onLearnMore}
                 icon={<ArrowRight className="w-5 h-5 ml-1" />}
                 iconPosition="end"
-                className="!bg-[#00796B] hover:!bg-[#00695C] !h-13 !px-8 !text-base !font-bold !rounded-xl !shadow-xl shadow-[#00796B]/30 flex items-center transition-transform hover:scale-105"
+                className="!bg-[#1998a1] hover:!bg-[#15828a] !h-13 !px-8 !text-base !font-bold !rounded-xl !shadow-xl shadow-[#1998a1]/40 flex items-center transition-transform hover:scale-105"
               >
                 Explore Trust Projects
               </Button>
@@ -121,12 +121,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
               />
 
               {/* Floating 100% Transparent Trust Badge Overlay */}
-              <div className="absolute bottom-6 left-6 bg-[#00796B] text-[#FFFFFF] px-6 py-4 rounded-xl flex items-center gap-4 shadow-xl border border-white/10 backdrop-blur-md">
-                <div className="w-11 h-11 bg-white/20 rounded-lg flex items-center justify-center">
-                  <ShieldCheck className="w-6 h-6 text-white" />
+              <div className="absolute bottom-6 left-6 bg-[#184c5d] text-[#FFFFFF] px-6 py-4 rounded-xl flex items-center gap-4 shadow-xl border border-[#dbaf25]/40 backdrop-blur-md">
+                <div className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center border border-[#dbaf25]/30">
+                  <ShieldCheck className="w-6 h-6 text-[#dbaf25]" />
                 </div>
                 <div>
-                  <div className="text-2xl font-black leading-none">100%</div>
+                  <div className="text-2xl font-black leading-none text-[#dbaf25]">100%</div>
                   <div className="text-xs font-bold text-slate-100 uppercase tracking-wider mt-1">
                     Transparent Mineral Trust
                   </div>
@@ -148,7 +148,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
         preserveAspectRatio="none"
         style={{
           zIndex: 25,
-          filter: 'drop-shadow(0 2px 10px rgba(45, 212, 191, 0.75))',
+          filter: 'drop-shadow(0 2px 10px rgba(25, 152, 161, 0.75))',
         }}
       >
         <defs>
@@ -156,11 +156,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
           <linearGradient id="shinyCurveBorder" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="transparent" />
             <stop offset="25%" stopColor="transparent" />
-            <stop offset="40%" stopColor="#2DD4BF" stopOpacity="0.8" />
+            <stop offset="40%" stopColor="#1998a1" stopOpacity="0.8" />
             <stop offset="48%" stopColor="#FFFFFF" stopOpacity="1" />
-            <stop offset="50%" stopColor="#00F5D4" stopOpacity="1" />
+            <stop offset="50%" stopColor="#52d6e0" stopOpacity="1" />
             <stop offset="52%" stopColor="#FFFFFF" stopOpacity="1" />
-            <stop offset="60%" stopColor="#2DD4BF" stopOpacity="0.8" />
+            <stop offset="60%" stopColor="#1998a1" stopOpacity="0.8" />
             <stop offset="75%" stopColor="transparent" />
             <stop offset="100%" stopColor="transparent" />
             <animateTransform
@@ -175,11 +175,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
 
           {/* Strong static base theme gradient line */}
           <linearGradient id="curveGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#00796B" stopOpacity="0.9" />
-            <stop offset="20%" stopColor="#2DD4BF" stopOpacity="1" />
-            <stop offset="50%" stopColor="#00F5D4" stopOpacity="1" />
-            <stop offset="80%" stopColor="#2DD4BF" stopOpacity="1" />
-            <stop offset="100%" stopColor="#00796B" stopOpacity="0.9" />
+            <stop offset="0%" stopColor="#184c5d" stopOpacity="0.9" />
+            <stop offset="20%" stopColor="#1998a1" stopOpacity="1" />
+            <stop offset="50%" stopColor="#52d6e0" stopOpacity="1" />
+            <stop offset="80%" stopColor="#1998a1" stopOpacity="1" />
+            <stop offset="100%" stopColor="#184c5d" stopOpacity="0.9" />
           </linearGradient>
         </defs>
 
@@ -187,7 +187,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
         <path
           d="M 0 0 Q 720 95 1440 0"
           fill="none"
-          stroke="#2DD4BF"
+          stroke="#1998a1"
           strokeWidth="10"
           opacity="0.4"
         />

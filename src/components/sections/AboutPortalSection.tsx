@@ -32,18 +32,18 @@ export const AboutPortalSection: React.FC<AboutPortalSectionProps> = ({
             className="lg:col-span-6 space-y-6"
           >
             <div>
-              <span className="text-xs font-bold text-[#00796B] tracking-[0.2em] uppercase mb-2 block">
+              <span className="text-xs font-bold text-[#1998a1] tracking-[0.2em] uppercase mb-2 block">
                 MINES & MINERALS REGULATORY COMPLIANCE
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-                <span className="text-[#0B192C]">Transforming Mineral Wealth </span>
-                <span className="bg-gradient-to-r from-[#00796B] via-[#00897B] to-[#004D40] bg-clip-text text-transparent">
+                <span className="text-[#184c5d]">Transforming Mineral Wealth </span>
+                <span className="bg-gradient-to-r from-[#1998a1] via-[#184c5d] to-[#1998a1] bg-clip-text text-transparent">
                   into Sustainable Welfare
                 </span>
               </h2>
             </div>
 
-            <p className="text-slate-600 text-base leading-relaxed">
+            <p className="text-slate-600 text-base leading-relaxed font-medium">
               The District Mineral Foundation (DMF) Trust operates as a
               statutory non-profit body under the Mines & Minerals Development
               Act. We ensure mineral royalties directly fund essential
@@ -73,13 +73,13 @@ export const AboutPortalSection: React.FC<AboutPortalSectionProps> = ({
                 onClick={onContactUs}
                 icon={<ArrowRight className="w-4 h-4 ml-1" />}
                 iconPosition="end"
-                className="!bg-[#00796B] hover:!bg-[#00695C] !h-12 !px-7 !font-bold !rounded-xl !shadow-lg"
+                className="!bg-[#1998a1] hover:!bg-[#15828a] !h-12 !px-7 !font-bold !rounded-xl !shadow-lg"
               >
                 Track Fund Allocation
               </Button>
 
               <div className="flex items-center gap-3 border-l border-slate-200 pl-6 text-xs text-slate-500">
-                <Shield className="w-5 h-5 text-[#00796B]" />
+                <Shield className="w-5 h-5 text-[#1998a1]" />
                 <div>
                   <div className="font-bold text-[#1E293B]">
                     CAG Audited Trust
@@ -106,11 +106,11 @@ export const AboutPortalSection: React.FC<AboutPortalSectionProps> = ({
               />
 
               {/* Floating Badge Card */}
-              <div className="about-badge-card bg-[#00796B] text-white p-6 rounded-2xl shadow-2xl absolute -bottom-6 -right-6 max-w-[240px]">
-                <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-3">
-                  <Award className="w-7 h-7 text-white" />
+              <div className="about-badge-card bg-[#184c5d] text-white p-6 rounded-2xl shadow-2xl absolute -bottom-6 -right-6 max-w-[240px] border-2 border-[#dbaf25] shadow-[0_0_20px_rgba(219,175,37,0.35)] backdrop-blur-md">
+                <div className="w-12 h-12 rounded-xl bg-[#dbaf25]/20 border border-[#dbaf25]/40 flex items-center justify-center mb-3">
+                  <Award className="w-7 h-7 text-[#dbaf25]" />
                 </div>
-                <div className="text-3xl font-black">₹850+ Cr</div>
+                <div className="text-3xl font-black text-[#dbaf25]">₹850+ Cr</div>
                 <div className="text-xs font-bold text-slate-100 uppercase tracking-wider mt-1">
                   Royalty Deployed
                 </div>

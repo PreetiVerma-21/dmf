@@ -236,11 +236,11 @@ export const NoticeSection: React.FC = () => {
       style={{
         backgroundColor: '#F4F6F9',
         backgroundImage: `
-          radial-gradient(circle at 50% 0%, rgba(0,121,107,0.06) 0%, transparent 50%),
-          radial-gradient(rgba(0,121,107,0.08) 1.5px, transparent 1.5px)
+          radial-gradient(circle at 50% 0%, rgba(25,152,161,0.06) 0%, transparent 50%),
+          radial-gradient(rgba(25,152,161,0.08) 1.5px, transparent 1.5px)
         `,
         backgroundSize: '100% 100%, 28px 28px',
-        boxShadow: '0 12px 30px -5px rgba(0,0,0,0.12), 0 4px 10px -2px rgba(0,121,107,0.08)',
+        boxShadow: '0 12px 30px -5px rgba(0,0,0,0.12), 0 4px 10px -2px rgba(25,152,161,0.08)',
       }}
     >
       {/* Soft top / bottom edge gradients */}
@@ -257,14 +257,14 @@ export const NoticeSection: React.FC = () => {
           className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8"
         >
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00796B]/10 border border-[#00796B]/15 rounded-full text-[#00796B] text-[11px] font-extrabold uppercase tracking-widest mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1998a1]/10 border border-[#1998a1]/20 rounded-full text-[#1998a1] text-[11px] font-extrabold uppercase tracking-widest mb-3">
               <Bell className="w-3 h-3" />
               <span>Notices & Announcements</span>
               <LiveDot />
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-800 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-black text-[#184c5d] tracking-tight">
               Latest Official{' '}
-              <span className="text-[#00796B]">Notifications</span>
+              <span className="text-[#1998a1]">Notifications</span>
             </h2>
           </div>
 
@@ -274,8 +274,8 @@ export const NoticeSection: React.FC = () => {
               onClick={() => setActiveFilter('all')}
               className={`px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all duration-300 ${
                 activeFilter === 'all'
-                  ? 'bg-[#00796B] text-white shadow-md shadow-[#00796B]/25'
-                  : 'bg-white text-slate-500 border border-slate-200 hover:border-[#00796B]/40 hover:text-[#00796B]'
+                  ? 'bg-[#1998a1] text-white shadow-md shadow-[#1998a1]/25'
+                  : 'bg-white text-slate-500 border border-slate-200 hover:border-[#1998a1]/40 hover:text-[#1998a1]'
               }`}
             >
               All
@@ -323,13 +323,13 @@ export const NoticeSection: React.FC = () => {
               onMouseLeave={() => setIsPaused(false)}
             >
               {/* Decorative corner accent */}
-              <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#00796B]/5 rounded-full blur-xl" />
+              <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#dbaf25]/10 rounded-full blur-xl" />
 
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-1.5">
-                    <Megaphone className="w-3.5 h-3.5 text-[#00796B]" />
-                    <span className="text-[10px] font-bold text-[#00796B] uppercase tracking-widest">
+                    <Megaphone className="w-3.5 h-3.5 text-[#dbaf25]" />
+                    <span className="text-[10px] font-extrabold text-[#dbaf25] uppercase tracking-widest">
                       Featured
                     </span>
                   </div>
@@ -340,7 +340,7 @@ export const NoticeSection: React.FC = () => {
                         onClick={() => setHighlightIdx(i)}
                         className={`h-1.5 rounded-full transition-all ${
                           i === highlightIdx
-                            ? 'bg-[#00796B] w-4'
+                            ? 'bg-[#1998a1] w-4'
                             : 'bg-slate-200 w-1.5 hover:bg-slate-300'
                         }`}
                       />
@@ -367,7 +367,7 @@ export const NoticeSection: React.FC = () => {
                       {highlightMeta.icon}
                       {highlightMeta.label}
                       {highlightedNotice.isNew && (
-                        <span className="ml-1 text-[9px] text-emerald-600 font-extrabold">
+                        <span className="ml-1 text-[9px] bg-[#dbaf25] text-[#184c5d] font-black px-1.5 rounded uppercase">
                           NEW
                         </span>
                       )}

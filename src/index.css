@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --navy-dark: #081220;
-  --navy-main: #0D1B2A;
-  --navy-card: #15263A;
-  --teal-primary: #00796B;
-  --teal-hover: #00695C;
-  --teal-light: rgba(0, 121, 107, 0.12);
-  --teal-glow: rgba(0, 121, 107, 0.4);
+  --navy-dark: #103642;
+  --navy-main: #184c5d;
+  --navy-card: #1f5a6d;
+  --teal-primary: #1998a1;
+  --teal-hover: #15828a;
+  --teal-light: rgba(25, 152, 161, 0.15);
+  --teal-glow: rgba(25, 152, 161, 0.5);
+  --gold-accent: #dbaf25;
+  --gold-hover: #c49a1d;
   --gray-bg: #F4F6F9;
   --gray-text: #64748B;
   --dark-text: #1E293B;
@@ -40,20 +42,20 @@ body {
 
 /* Header & Navigation Styles */
 .top-header-strip {
-  background-color: var(--navy-dark);
-  color: rgba(255, 255, 255, 0.75);
+  background-color: #103642;
+  color: rgba(255, 255, 255, 0.85);
   font-size: 13px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .main-nav-bar {
-  background-color: var(--navy-main);
+  background: linear-gradient(135deg, #184c5d 0%, #1998a1 50%, #103642 100%);
   transition: all 0.3s ease;
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
   text-decoration: none;
   position: relative;
   padding: 6px 0;
@@ -70,14 +72,14 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px;
-  background-color: var(--teal-primary);
+  height: 3px;
+  background-color: #FFFFFF;
   border-radius: 2px;
 }
 
 /* Hero Section Container & Connected Pattern */
 .hero-section {
-  background: linear-gradient(135deg, #091524 0%, #0D1B2A 50%, #0B192C 100%);
+  background: linear-gradient(135deg, #103642 0%, #184c5d 50%, #103642 100%);
   position: relative;
   overflow: hidden;
   color: var(--white);
@@ -94,8 +96,8 @@ body {
   pointer-events: none;
   background-color: #F4F6F9;
   background-image: 
-    radial-gradient(circle at 50% 100%, #00796b28 0%, #0000 80%),
-    radial-gradient(#00796b38 2.2px, #0000 2.2px);
+    radial-gradient(circle at 50% 100%, #1998a128 0%, #0000 80%),
+    radial-gradient(#1998a138 2.2px, #0000 2.2px);
   background-size: 100% 100%, 32px 32px;
   clip-path: url(#hero-curve-clip);
   -webkit-clip-path: url(#hero-curve-clip);
@@ -117,8 +119,8 @@ body {
   position: relative;
   background-color: #F4F6F9;
   background-image: 
-    radial-gradient(circle at 50% 0%, #00796b28 0%, #0000 60%),
-    radial-gradient(#00796b38 2.2px, #0000 2.2px);
+    radial-gradient(circle at 50% 0%, #1998a128 0%, #0000 60%),
+    radial-gradient(#1998a138 2.2px, #0000 2.2px);
   background-size: 100% 100%, 32px 32px;
 }
 

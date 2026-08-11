@@ -154,14 +154,14 @@ export const PrioritySectorsSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00796B]/10 border border-[#00796B]/25 text-[#00796B] font-extrabold text-xs tracking-wider uppercase mb-3 shadow-sm">
-              <Sparkles className="w-4 h-4 text-[#00796B]" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1998a1]/10 border border-[#1998a1]/25 text-[#1998a1] font-extrabold text-xs tracking-wider uppercase mb-3 shadow-sm">
+              <Sparkles className="w-4 h-4 text-[#dbaf25]" />
               <span>PMKKKY STATUTORY MANDATE</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0D1B2A]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#184c5d]">
               Priority Sectors & Fund Allocation
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-xl">
+            <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-xl font-medium">
               Hover over or click any sector card to expand live fund allocations, deliverables, and beneficiary metrics.
             </p>
           </div>
@@ -170,13 +170,13 @@ export const PrioritySectorsSection: React.FC = () => {
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={handlePrev}
-              className="w-12 h-12 rounded-2xl bg-white hover:bg-[#00796B] border border-slate-200 hover:border-[#00796B] text-slate-700 hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95 group"
+              className="w-12 h-12 rounded-2xl bg-white hover:bg-[#1998a1] border border-slate-200 hover:border-[#1998a1] text-slate-700 hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95 group"
             >
               <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
             </button>
             <button
               onClick={handleNext}
-              className="w-12 h-12 rounded-2xl bg-white hover:bg-[#00796B] border border-slate-200 hover:border-[#00796B] text-slate-700 hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95 group"
+              className="w-12 h-12 rounded-2xl bg-white hover:bg-[#1998a1] border border-slate-200 hover:border-[#1998a1] text-slate-700 hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95 group"
             >
               <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
             </button>
@@ -197,8 +197,8 @@ export const PrioritySectorsSection: React.FC = () => {
                 transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
                 className={`relative rounded-3xl overflow-hidden cursor-pointer border transition-all duration-500 flex flex-col justify-between p-7 shadow-xl group ${
                   isHovered
-                    ? 'flex-[3.5] bg-[#0D1B2A] text-white border-[#2DD4BF] shadow-2xl shadow-[#00796B]/30 ring-2 ring-[#2DD4BF]/40'
-                    : 'flex-[1] bg-[#0D1B2A] border-slate-700 hover:border-[#2DD4BF]/60 text-white'
+                    ? 'flex-[3.5] bg-[#184c5d] text-white border-[#52d6e0] shadow-2xl shadow-[#1998a1]/30 ring-2 ring-[#52d6e0]/40'
+                    : 'flex-[1] bg-[#184c5d] border-slate-700 hover:border-[#52d6e0]/60 text-white'
                 }`}
               >
                 {/* 100% CLEAR High-Res Background Image across Entire Card */}
@@ -211,7 +211,7 @@ export const PrioritySectorsSection: React.FC = () => {
                     }`}
                   />
                   {/* Subtle Top & Bottom Vignette for Contrast */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#0D1B2A]/80 via-[#0D1B2A]/40 to-[#0D1B2A]/90" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#184c5d]/85 via-[#184c5d]/45 to-[#184c5d]/95" />
                 </div>
 
                 {/* Card Top Header: Icon + Allocation Badge */}
@@ -219,14 +219,14 @@ export const PrioritySectorsSection: React.FC = () => {
                   <div 
                     className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 shrink-0 ${
                       isHovered 
-                        ? 'bg-[#00796B] text-[#2DD4BF] shadow-lg shadow-[#00796B]/50 scale-110 ring-2 ring-[#2DD4BF]/40' 
-                        : 'bg-[#0D1B2A]/80 text-[#2DD4BF] border border-[#2DD4BF]/40 backdrop-blur-md'
+                        ? 'bg-[#1998a1] text-white shadow-lg shadow-[#1998a1]/50 scale-110 ring-2 ring-white/40' 
+                        : 'bg-[#184c5d]/90 text-[#52d6e0] border border-[#52d6e0]/40 backdrop-blur-md'
                     }`}
                   >
                     {sector.icon}
                   </div>
 
-                  <span className="text-xs font-black px-3 py-1.5 rounded-xl bg-[#00796B] border border-[#2DD4BF]/40 text-[#2DD4BF] shadow-md backdrop-blur-md shrink-0">
+                  <span className="text-xs font-black px-3 py-1.5 rounded-xl bg-[#dbaf25] border border-[#dbaf25] text-[#184c5d] shadow-md backdrop-blur-md shrink-0">
                     {sector.allocationPercent}%
                   </span>
                 </div>
@@ -236,7 +236,7 @@ export const PrioritySectorsSection: React.FC = () => {
                   <div className="flex flex-col items-center justify-between flex-grow relative z-10 py-6">
                     <div className="flex-grow flex items-center justify-center">
                       <h3 
-                        className="font-black tracking-widest text-[#2DD4BF] text-lg sm:text-xl uppercase whitespace-nowrap drop-shadow-lg group-hover:text-white transition-colors"
+                        className="font-black tracking-widest text-[#52d6e0] text-lg sm:text-xl uppercase whitespace-nowrap drop-shadow-lg group-hover:text-white transition-colors"
                         style={{
                           writingMode: 'vertical-lr',
                           transform: 'rotate(180deg)',
@@ -246,8 +246,8 @@ export const PrioritySectorsSection: React.FC = () => {
                       </h3>
                     </div>
 
-                    <div className="mt-4 bg-[#0D1B2A]/90 border border-slate-700 backdrop-blur-md px-3 py-1 rounded-xl text-center shadow-lg">
-                      <span className="text-xs font-black text-white block">
+                    <div className="mt-4 bg-[#184c5d]/95 border border-[#dbaf25]/40 backdrop-blur-md px-3 py-1 rounded-xl text-center shadow-lg">
+                      <span className="text-xs font-black text-[#dbaf25] block">
                         {sector.totalFunds}
                       </span>
                     </div>
@@ -263,7 +263,7 @@ export const PrioritySectorsSection: React.FC = () => {
                     className="relative z-10 flex flex-col justify-between flex-grow mt-6"
                   >
                     <div>
-                      <span className="text-xs font-extrabold tracking-widest text-[#2DD4BF] uppercase block mb-1">
+                      <span className="text-xs font-extrabold tracking-widest text-[#dbaf25] uppercase block mb-1">
                         {sector.category}
                       </span>
                       <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight">

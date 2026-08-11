@@ -55,16 +55,16 @@ export const VarietyServicesSection: React.FC<VarietyServicesSectionProps> = ({ 
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold text-[#00796B] tracking-[0.2em] uppercase mb-2 block">
+          <span className="text-xs font-bold text-[#1998a1] tracking-[0.2em] uppercase mb-2 block">
             SUSTAINABLE COMMUNITY DEVELOPMENT
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            <span className="text-[#0B192C]">Key District Mineral </span>
-            <span className="bg-gradient-to-r from-[#00796B] via-[#00897B] to-[#004D40] bg-clip-text text-transparent">
+            <span className="text-[#184c5d]">Key District Mineral </span>
+            <span className="bg-gradient-to-r from-[#1998a1] via-[#184c5d] to-[#1998a1] bg-clip-text text-transparent">
               Foundation Initiatives
             </span>
           </h2>
-          <p className="text-slate-500 text-base mt-3">
+          <p className="text-slate-600 text-base mt-3 font-medium">
             Delivering high-impact social welfare, environmental restoration, and economic self-reliance across mining zones.
           </p>
         </div>
@@ -87,7 +87,7 @@ export const VarietyServicesSection: React.FC<VarietyServicesSectionProps> = ({ 
                   src={service.image} 
                   alt={service.title} 
                 />
-                <div className="service-badge-pill shadow-lg">
+                <div className="service-badge-pill shadow-lg !bg-[#dbaf25] !text-[#184c5d] font-bold">
                   {service.icon}
                 </div>
               </div>
@@ -95,10 +95,10 @@ export const VarietyServicesSection: React.FC<VarietyServicesSectionProps> = ({ 
               {/* Body */}
               <div className="p-7 space-y-3 flex-grow flex flex-col justify-between">
                 <div>
-                  <span className="text-[11px] font-bold text-[#00796B] tracking-wider uppercase">
+                  <span className="text-[10px] font-black text-[#184c5d] bg-[#dbaf25] px-2 py-0.5 rounded tracking-wider uppercase border border-[#dbaf25] shadow-xs">
                     {service.badgeTag}
                   </span>
-                  <h3 className="text-xl font-bold text-[#1E293B] group-hover:text-[#00796B] transition-colors mt-1">
+                  <h3 className="text-xl font-bold text-[#184c5d] group-hover:text-[#1998a1] transition-colors mt-2">
                     {service.title}
                   </h3>
                   <p className="text-slate-500 text-xs sm:text-sm mt-3 leading-relaxed">
@@ -106,7 +106,7 @@ export const VarietyServicesSection: React.FC<VarietyServicesSectionProps> = ({ 
                   </p>
                 </div>
 
-                <div className="pt-4 flex items-center gap-2 text-[#00796B] font-bold text-sm group-hover:translate-x-1 transition-transform">
+                <div className="pt-4 flex items-center gap-2 text-[#1998a1] font-bold text-sm group-hover:translate-x-1 transition-transform">
                   <span>View Initiative Details</span>
                   <ArrowRight className="w-4 h-4" />
                 </div>

@@ -82,17 +82,17 @@ export const DepartmentServices: React.FC<DepartmentServicesProps> = ({
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#00796B]/10 border border-[#00796B]/30 rounded-full text-[#00796B] text-xs font-bold uppercase tracking-widest mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#00796B]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#1998a1]/10 border border-[#1998a1]/30 rounded-full text-[#1998a1] text-xs font-bold uppercase tracking-widest mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-[#dbaf25]" />
             <span>PMKKKY MANDATED SECTORS</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            <span className="text-[#0B192C]">DMF High Priority </span>
-            <span className="bg-gradient-to-r from-[#00796B] via-[#00897B] to-[#004D40] bg-clip-text text-transparent">
+            <span className="text-[#184c5d]">DMF High Priority </span>
+            <span className="bg-gradient-to-r from-[#1998a1] via-[#184c5d] to-[#1998a1] bg-clip-text text-transparent">
               Focus Areas
             </span>
           </h2>
-          <p className="text-slate-500 text-base mt-3 max-w-2xl mx-auto">
+          <p className="text-slate-600 text-base mt-3 max-w-2xl mx-auto font-medium">
             Targeted development initiatives funded directly by mineral royalties to uplift mining-affected families.
           </p>
         </div>
@@ -109,14 +109,14 @@ export const DepartmentServices: React.FC<DepartmentServicesProps> = ({
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
               onClick={() => onSelectDepartment(dept)}
-              className="group bg-white relative rounded-2xl border border-slate-200/90 shadow-md shadow-slate-200/60 overflow-hidden flex flex-col justify-between cursor-pointer transition-all duration-300 hover:shadow-2xl hover:shadow-[#00796B]/20 hover:border-[#00796B]/40"
+              className="group bg-white relative rounded-2xl border border-slate-200/90 shadow-md shadow-slate-200/60 overflow-hidden flex flex-col justify-between cursor-pointer transition-all duration-300 hover:shadow-2xl hover:shadow-[#1998a1]/20 hover:border-[#1998a1]/40"
             >
               {/* Top Vibrant Header Accent Box */}
-              <div className="relative h-20 bg-gradient-to-r from-[#00796B]/12 via-[#00796B]/5 to-transparent p-4 flex items-center justify-between border-b border-slate-100">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00796B] to-[#004D40] text-white flex items-center justify-center shadow-lg shadow-[#00796B]/25 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+              <div className="relative h-20 bg-gradient-to-r from-[#1998a1]/15 via-[#1998a1]/5 to-transparent p-4 flex items-center justify-between border-b border-slate-100">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1998a1] to-[#184c5d] text-white flex items-center justify-center shadow-lg shadow-[#1998a1]/25 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                   {dept.icon}
                 </div>
-                <span className="text-[10px] font-extrabold text-[#00796B] bg-white border border-[#00796B]/25 px-2.5 py-1 rounded-full uppercase tracking-wider shadow-xs">
+                <span className="text-[10px] font-black text-[#184c5d] bg-[#dbaf25] border border-[#dbaf25] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-xs">
                   {dept.tag}
                 </span>
               </div>
@@ -124,7 +124,7 @@ export const DepartmentServices: React.FC<DepartmentServicesProps> = ({
               {/* Card Body Content */}
               <div className="p-5 flex-grow flex flex-col justify-between space-y-3">
                 <div>
-                  <h3 className="text-base font-extrabold text-[#0B192C] group-hover:text-[#00796B] transition-colors leading-snug">
+                  <h3 className="text-base font-extrabold text-[#184c5d] group-hover:text-[#1998a1] transition-colors leading-snug">
                     {dept.title}
                   </h3>
                   <p className="text-xs text-slate-500 mt-2 leading-relaxed line-clamp-3">
@@ -134,15 +134,15 @@ export const DepartmentServices: React.FC<DepartmentServicesProps> = ({
 
                 {/* Metric Badge Pill */}
                 <div className="pt-2">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 group-hover:bg-[#00796B]/10 rounded-lg text-[11px] font-bold text-slate-600 group-hover:text-[#00796B] transition-colors">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00796B]"></span>
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 group-hover:bg-[#1998a1]/10 rounded-lg text-[11px] font-bold text-slate-600 group-hover:text-[#1998a1] transition-colors">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1998a1]"></span>
                     <span>{dept.servicesCount} Projects</span>
                   </div>
                 </div>
               </div>
 
               {/* Bottom Action Footer Strip */}
-              <div className="px-5 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#00796B] group-hover:bg-[#00796B] group-hover:text-white transition-colors duration-300">
+              <div className="px-5 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#1998a1] group-hover:bg-[#1998a1] group-hover:text-white transition-colors duration-300">
                 <span>Explore Sector</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
