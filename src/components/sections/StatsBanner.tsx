@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Coins, HardHat, Users, LandPlot, ShieldCheck } from "lucide-react";
+import { Coins, HardHat, Users, LandPlot } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import statsBgImg from "../../assets/images/hero_admin_team.png";
@@ -111,7 +111,7 @@ export const StatsBanner: React.FC = () => {
     <section
       ref={containerRef}
       id="stats"
-      className="relative pt-20 pb-32 bg-[#081220] overflow-hidden"
+      className="relative pt-10 pb-32 bg-[#081220] overflow-hidden"
       style={{
         boxShadow:
           "0 -8px 30px rgba(0,0,0,0.45), 0 8px 30px rgba(0,0,0,0.45), inset 0 0 60px rgba(45,212,191,0.04)",
@@ -144,12 +144,12 @@ export const StatsBanner: React.FC = () => {
 
       <div className="container-custom relative z-10 my-4">
         {/* Header Tag Pill */}
-        <div className="text-center mb-10">
+        {/* <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2DD4BF]/10 rounded-full text-[#2DD4BF] text-xs font-extrabold uppercase tracking-widest backdrop-blur-md">
             <ShieldCheck className="w-4 h-4 text-[#2DD4BF]" />
             <span>TRANSPARENT ROYALTY DEPLOYMENT</span>
           </div>
-        </div>
+        </div> */}
 
         {/* Stats Grid Container */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

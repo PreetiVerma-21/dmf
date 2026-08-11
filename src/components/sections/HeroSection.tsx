@@ -2,9 +2,10 @@ import React from "react";
 import { Button } from "antd";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import { DynamicDevCircle } from "./DynamicDevCircle";
 
-import heroImg from "../../assets/images/hero_admin_team.png";
-import heroBgImg from "../../assets/images/hero_bg_futuristic.png";
+import frontImg from "../../assets/images/frontimg.png";
+import bgContVideo from "../../assets/images/bgcont.mp4";
 
 interface HeroSectionProps {
   onLearnMore?: () => void;
@@ -25,18 +26,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
         </defs>
       </svg>
 
-      {/* Background Mining & Digital Trust Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 mix-blend-luminosity pointer-events-none"
-        style={{ backgroundImage: `url(${heroBgImg})` }}
+      {/* Infinite Background Video */}
+      <video
+        src={bgContVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-75 pointer-events-none"
       />
 
-      {/* Dark Navy Blue Gradient Overlay */}
+      {/* Subtle Navy Overlay for Optimal Contrast & Text Readability */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle at 50% 40%, rgba(0, 121, 107, 0.25) 0%, transparent 65%), linear-gradient(rgb(13 27 42 / 65%) 0%, rgba(9, 21, 36, 0.98) 100%)",
+            "radial-gradient(circle at 50% 40%, rgba(0, 121, 107, 0.2) 0%, transparent 70%), linear-gradient(to bottom, rgba(11, 25, 44, 0.5) 0%, rgba(9, 21, 36, 0.75) 100%)",
         }}
       />
 
@@ -110,8 +115,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
               <img
-                src={heroImg}
-                alt="District Mineral Foundation Project Inspection"
+                src={frontImg}
+                alt="District Mineral Foundation Trust Development"
                 className="w-full h-[380px] sm:h-[460px] object-cover"
               />
 
@@ -204,6 +209,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onLearnMore }) => {
           strokeWidth="5"
         />
       </svg>
+
+      {/* Dynamic Theme Circle with Animated Border Ring & Dev Icon */}
+      <DynamicDevCircle />
 
     </section>
   );

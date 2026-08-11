@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'antd';
-import { Pickaxe, Menu, X, ShieldCheck, LogIn, UserPlus } from 'lucide-react';
+import { Pickaxe, Menu, X, LogIn, UserPlus } from 'lucide-react';
 
 interface MainNavbarProps {
   activeSection: string;
@@ -27,7 +26,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
 
   return (
     <header className="main-nav-bar sticky top-0 z-50 border-b border-slate-800/80 backdrop-blur-md bg-[#0D1B2A]/95">
-      <div className="container-custom flex items-center justify-between h-20">
+      <div className="w-full px-6 sm:px-10 lg:px-12 flex items-center justify-between h-20">
         
         {/* Brand Logo */}
         <div 
@@ -53,7 +52,7 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
         </div>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8 lg:gap-10 xl:gap-12">
           {navLinks.map((link) => (
             <button
               key={link.id}

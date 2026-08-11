@@ -4,7 +4,7 @@ import { Phone, Clock, MapPin, Globe } from 'lucide-react';
 export const TopHeader: React.FC = () => {
   return (
     <div className="top-header-strip hidden md:block py-2">
-      <div className="container-custom flex items-center justify-between">
+      <div className="w-full px-6 sm:px-10 lg:px-12 flex items-center justify-between">
         {/* Left Side Info */}
         <div className="flex items-center gap-6 text-xs text-slate-300">
           <div className="flex items-center gap-2">
