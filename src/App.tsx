@@ -5,11 +5,14 @@ import { customTheme } from './theme/antdTheme';
 import { TopHeader } from './components/layout/TopHeader';
 import { MainNavbar } from './components/layout/MainNavbar';
 import { HeroSection } from './components/sections/HeroSection';
+import { ChhattisgarhMapSection } from './components/sections/ChhattisgarhMapSection';
+import { AboutUsSection } from './components/sections/AboutUsSection';
 import { DepartmentServices } from './components/sections/DepartmentServices';
 import type { DepartmentItem } from './components/sections/DepartmentServices';
 import { AboutPortalSection } from './components/sections/AboutPortalSection';
 import { StatsBanner } from './components/sections/StatsBanner';
-import { NoticeSection } from './components/sections/NoticeSection';
+import { CommunityVectorBanner } from './components/sections/CommunityVectorBanner';
+import { NewsTickerStrip } from './components/sections/NewsTickerStrip';
 import { PrioritySectorsSection } from './components/sections/PrioritySectorsSection';
 import { VarietyServicesSection } from './components/sections/VarietyServicesSection';
 import type { ServiceCardData } from './components/sections/VarietyServicesSection';
@@ -70,11 +73,20 @@ export const App: React.FC = () => {
           onRequestAccess={() => setCurrentView('login')}
         />
 
+        {/* Animated Gradient Live News & Notices Ticker Strip */}
+        <NewsTickerStrip />
+
         <main>
           {/* Hero Section with 100% Secure Floating Badge */}
           <HeroSection 
             onLearnMore={() => scrollToSection('services')}
           />
+
+          {/* Chhattisgarh Interactive District Highmap & Pie Analytics */}
+          <ChhattisgarhMapSection />
+
+          {/* About Us Section with 3/4 Interactive Flip Book & 1/4 Theme Cards */}
+          <AboutUsSection />
 
           {/* Core Government Departments Cards */}
           <DepartmentServices 
@@ -86,11 +98,13 @@ export const App: React.FC = () => {
             onContactUs={() => setCurrentView('login')}
           />
 
+          {/* Community Vector Banner — ON TOP of StatsBanner, using banner bg color #103642 */}
+          <div className="w-full -mb-[35px] relative z-0">
+            <CommunityVectorBanner color="#103642" cutoutColor="#F4F6F9" height={85} />
+          </div>
+
           {/* Stats Metrics Banner */}
           <StatsBanner />
-
-          {/* Official Notices & Announcements */}
-          <NoticeSection />
 
           {/* PMKKKY Priority Sectors & Fund Allocation */}
           <PrioritySectorsSection />

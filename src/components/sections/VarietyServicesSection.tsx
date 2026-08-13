@@ -50,9 +50,9 @@ export const VarietyServicesSection: React.FC<VarietyServicesSectionProps> = ({ 
   ];
 
   return (
-    <section id="projects" className="py-24 bg-[#F4F6F9]">
+    <section id="projects" className="pt-10 bg-[#F4F6F9]">
       <div className="container-custom">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-bold text-[#1998a1] tracking-[0.2em] uppercase mb-2 block">
@@ -83,9 +83,9 @@ export const VarietyServicesSection: React.FC<VarietyServicesSectionProps> = ({ 
             >
               {/* Image Box */}
               <div className="service-card-image">
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
+                <img
+                  src={service.image}
+                  alt={service.title}
                 />
                 <div className="service-badge-pill shadow-lg !bg-[#dbaf25] !text-[#184c5d] font-bold">
                   {service.icon}

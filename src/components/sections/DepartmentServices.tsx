@@ -77,7 +77,7 @@ export const DepartmentServices: React.FC<DepartmentServicesProps> = ({
   return (
     <section
       id="services"
-      className="py-16 dept-connected-pattern relative overflow-hidden"
+      className="py-8 dept-connected-pattern relative overflow-hidden"
     >
       <div className="container-custom relative z-10">
         {/* Section Header */}

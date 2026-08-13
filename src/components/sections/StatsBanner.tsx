@@ -7,7 +7,7 @@ import statsBgImg from "../../assets/images/hero_admin_team.png";
 /** Multi-Wave Bottom Divider overlay matching user's provided S-curve wave SVG */
 const MultiWaveFrame: React.FC = () => {
   return (
-    <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden pointer-events-none z-20">
+    <div className="absolute -bottom-[1px] left-0 right-0 w-full overflow-hidden pointer-events-none z-20">
       <svg
         className="w-full h-[80px] sm:h-[120px] lg:h-[150px]"
         viewBox="0 0 1440 320"
@@ -111,11 +111,7 @@ export const StatsBanner: React.FC = () => {
     <section
       ref={containerRef}
       id="stats"
-      className="relative pt-10 pb-32 bg-[#103642] overflow-hidden"
-      style={{
-        boxShadow:
-          "0 -8px 30px rgba(0,0,0,0.45), 0 8px 30px rgba(0,0,0,0.45), inset 0 0 60px rgba(219,175,37,0.08)",
-      }}
+      className="relative z-20 pt-10 pb-32 bg-[#103642] overflow-hidden"
     >
       {/* Parallax Background Image Layer */}
       <motion.div

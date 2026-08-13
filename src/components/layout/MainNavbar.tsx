@@ -25,11 +25,11 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
   ];
 
   return (
-    <header className="main-nav-bar sticky top-0 z-50 border-b border-[#C6A75E]/30 backdrop-blur-md bg-gradient-to-r from-[#1F2A44] via-[#283654] to-[#1F2A44] shadow-xl">
+    <header className="main-nav-bar sticky top-0 z-50 border-b border-[#C6A75E]/30 backdrop-blur-md bg-[#15828a] shadow-xl">
       <div className="w-full px-6 sm:px-10 lg:px-12 flex items-center justify-between h-20">
-        
+
         {/* Brand Logo */}
-        <div 
+        <div
           onClick={() => onNavigate('home')}
           className="flex items-center gap-3 cursor-pointer group"
         >
@@ -57,9 +57,8 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
             <button
               key={link.id}
               onClick={() => onNavigate(link.id)}
-              className={`nav-link text-sm font-bold tracking-wide transition-colors ${
-                activeSection === link.id ? 'active text-[#C6A75E] font-extrabold' : 'text-slate-100 hover:text-[#E8DCC8]'
-              }`}
+              className={`nav-link text-sm font-bold tracking-wide transition-colors ${activeSection === link.id ? 'active text-[#C6A75E] font-extrabold' : 'text-slate-100 hover:text-[#E8DCC8]'
+                }`}
             >
               {link.label}
             </button>
