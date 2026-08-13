@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Pickaxe, Menu, X, LogIn } from 'lucide-react';
+import { Menu, X, LogIn } from 'lucide-react';
+import logoLive from '../../assets/images/logo_live.png';
 
 interface MainNavbarProps {
   activeSection: string;
@@ -31,24 +32,13 @@ export const MainNavbar: React.FC<MainNavbarProps> = ({
         {/* Brand Logo */}
         <div
           onClick={() => onNavigate('home')}
-          className="flex items-center gap-3 cursor-pointer group"
+          className="flex items-center cursor-pointer group"
         >
-          <div className="w-11 h-11 rounded-xl bg-[#141C2E] flex items-center justify-center shadow-lg shadow-black/30 group-hover:scale-105 transition-transform border border-[#C6A75E]/40">
-            <Pickaxe className="w-6 h-6 text-[#C6A75E]" />
-          </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="text-xl font-black tracking-tight text-white font-['Plus_Jakarta_Sans']">
-                DMF PORTAL
-              </span>
-              <span className="text-[10px] font-black tracking-widest px-1.5 py-0.5 rounded bg-[#C6A75E] text-[#1F2A44] border border-[#C6A75E] uppercase shadow-[0_0_8px_rgba(198,167,94,0.4)]">
-                TRUST
-              </span>
-            </div>
-            <p className="text-[11px] font-semibold text-slate-200 tracking-wide">
-              District Mineral Foundation
-            </p>
-          </div>
+          <img
+            src={logoLive}
+            alt="DMF Logo"
+            className="h-14 w-auto object-contain transition-transform group-hover:scale-105"
+          />
         </div>
 
         {/* Desktop Navigation Links */}

@@ -1,96 +1,94 @@
-import React, { useState } from 'react';
-import { Mail, Lock, Eye, EyeOff, ArrowLeft, CheckCircle2, User } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowLeft, CheckCircle2, User, Lock, Eye, EyeOff, RotateCw } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import frontimg from '../../assets/images/frontimg.png';
+import aboutKiosk from '../../assets/images/about_kiosk.png';
+import heroAdminTeam from '../../assets/images/hero_admin_team.png';
 
 interface LoginPageProps {
   onBackToHome: () => void;
 }
 
 export const LoginPage: React.FC<LoginPageProps> = ({ onBackToHome }) => {
-  const [activeTab, setActiveTab] = useState<'login' | 'signup'>('login');
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [fullName, setFullName] = useState('');
+  const [captchaCode, setCaptchaCode] = useState('');
+  const [captchaInput, setCaptchaInput] = useState('');
+  const [captchaError, setCaptchaError] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const generateCaptcha = () => {
+    const chars = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ'; // exclude confusing chars like 1, l, 0, O
+    let code = '';
+    for (let i = 0; i < 5; i++) {
+      code += chars[Math.floor(Math.random() * chars.length)];
+    }
+    setCaptchaCode(code);
+    setCaptchaError(false);
+  };
+
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (captchaInput.toUpperCase() !== captchaCode.toUpperCase()) {
+      setCaptchaError(true);
+      return;
+    }
+    setCaptchaError(false);
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
     }, 3000);
   };
 
+  // Helper function to generate pointy-topped hexagon SVG polygon points
+  const getHexPoints = (cx: number, cy: number, r: number) => {
+    const points = [];
+    for (let i = 0; i < 6; i++) {
+      const angle = (i * Math.PI) / 3 - Math.PI / 2; // pointy-topped
+      points.push(`${cx + r * Math.cos(angle)},${cy + r * Math.sin(angle)}`);
+    }
+    return points.join(' ');
+  };
+
   return (
-    <div className="min-h-screen w-full bg-[#F4F6F9] flex items-center justify-center p-4 sm:p-6 lg:p-10 relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
-      
+    <div className="min-h-screen w-full bg-gradient-to-br from-[#feffec] to-[#15828a22] flex items-center justify-center p-4 sm:p-6 lg:p-10 relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
       {/* Outer Backdrop Concentric Decorative Circles */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full border-[40px] border-[#1998a1]/15 pointer-events-none" />
-      <div className="absolute -top-48 -left-48 w-[500px] h-[500px] rounded-full border-[50px] border-[#184c5d]/5 pointer-events-none" />
-      <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full border-[60px] border-[#1998a1]/10 pointer-events-none" />
-      <div className="absolute -bottom-56 -right-56 w-[750px] h-[750px] rounded-full border-[80px] border-[#184c5d]/5 pointer-events-none" />
+      <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full border-[40px] border-[#1998a1]/10 pointer-events-none" />
+      <div className="absolute -top-48 -left-48 w-[500px] h-[500px] rounded-full border-[50px] border-[#dbaf25]/5 pointer-events-none" />
+      <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full border-[60px] border-[#1998a1]/5 pointer-events-none" />
+      <div className="absolute -bottom-56 -right-56 w-[750px] h-[750px] rounded-full border-[80px] border-[#dbaf25]/5 pointer-events-none" />
 
       {/* Main Login Card */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.96, y: 20 }}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.97, y: 15 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="w-full max-w-5xl bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden relative z-10 flex flex-col min-h-[560px]"
+        transition={{ duration: 0.4 }}
+        className="w-full max-w-4xl bg-white rounded-[24px] shadow-[0_30px_70px_rgba(16,54,66,0.18)] overflow-hidden relative z-10 grid grid-cols-1 md:grid-cols-12 min-h-[500px] border border-slate-100"
       >
-        {/* Top-Right Back to Home Button */}
-        <button
-          onClick={onBackToHome}
-          className="absolute top-5 right-5 z-30 flex items-center gap-2 px-4 py-2 text-xs font-bold text-[#184c5d] bg-slate-100 hover:bg-[#1998a1]/15 hover:text-[#1998a1] rounded-full border border-slate-200 transition-all shadow-xs active:scale-95 cursor-pointer"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span>Back to Home</span>
-        </button>
+        {/* Left Column: Form Area */}
+        <div className="md:col-span-6 p-8 sm:p-12 lg:p-16 flex flex-col justify-center relative">
+          
+          {/* Back to Home Button */}
+          <button
+            onClick={onBackToHome}
+            className="absolute top-6 left-8 flex items-center gap-1.5 px-3.5 py-1.5 text-[11px] font-black text-[#103642] bg-[#1998a1]/10 hover:bg-[#1998a1] hover:text-white rounded-full border border-[#1998a1]/25 transition-all shadow-xs cursor-pointer active:scale-95 z-30"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" />
+            <span>Back to Home</span>
+          </button>
 
-        {/* ═══ Main Split Content Area ═══ */}
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 relative">
-
-          {/* ─── LEFT COLUMN: Form Area ─── */}
-          <div className="lg:col-span-6 p-8 sm:p-12 lg:p-14 flex flex-col justify-center z-10">
-            
-            {/* Tab Navigation: Login vs Sign Up */}
-            <div className="flex items-center gap-8 mb-8 border-b border-slate-100 pb-1">
-              <button
-                type="button"
-                onClick={() => setActiveTab('login')}
-                className={`relative pb-3 text-xl font-bold transition-colors ${
-                  activeTab === 'login' 
-                    ? 'text-[#184c5d] font-black' 
-                    : 'text-slate-400 hover:text-slate-600'
-                }`}
-              >
-                Login
-                {activeTab === 'login' && (
-                  <motion.div 
-                    layoutId="tabUnderline"
-                    className="absolute bottom-0 left-0 right-0 h-1 bg-[#1998a1] rounded-full"
-                  />
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setActiveTab('signup')}
-                className={`relative pb-3 text-xl font-bold transition-colors ${
-                  activeTab === 'signup' 
-                    ? 'text-[#184c5d] font-black' 
-                    : 'text-slate-400 hover:text-slate-600'
-                }`}
-              >
-                Sign up
-                {activeTab === 'signup' && (
-                  <motion.div 
-                    layoutId="tabUnderline"
-                    className="absolute bottom-0 left-0 right-0 h-1 bg-[#1998a1] rounded-full"
-                  />
-                )}
-              </button>
-            </div>
+          <div className="mt-4">
+            <h2 className="text-3xl font-black text-[#103642] tracking-tight mb-1">
+              Welcome!
+            </h2>
+            <p className="text-slate-400 text-xs font-bold tracking-wide mb-8">
+              District Mineral Foundation Trust Portal
+            </p>
 
             {/* Notification / Success Alert */}
             <AnimatePresence>
@@ -99,247 +97,302 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onBackToHome }) => {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="mb-6 p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold flex items-center gap-2"
+                  className="mb-6 p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold flex items-center gap-2"
                 >
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   <span>
-                    {activeTab === 'login' 
-                      ? 'Authentication successful! Redirecting to District Portal...' 
-                      : 'Account registration request submitted for verification.'}
+                    Authentication successful! Redirecting to District Portal...
                   </span>
                 </motion.div>
               )}
             </AnimatePresence>
 
-            {/* Main Auth Form */}
+            {/* Auth Form */}
             <form onSubmit={handleSubmit} className="space-y-5">
               
-              {/* Full Name field (Only shown for Sign Up tab) */}
-              {activeTab === 'signup' && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="space-y-1"
-                >
-                  <div className="relative flex items-center bg-slate-50/80 hover:bg-slate-100/80 focus-within:bg-white border border-slate-200 focus-within:border-[#1998a1] rounded-full px-4 py-2.5 transition-all shadow-xs">
-                    <div className="w-8 h-8 rounded-full bg-slate-200/70 flex items-center justify-center text-slate-500 mr-3 shrink-0">
-                      <User className="w-4 h-4" />
-                    </div>
-                    <input
-                      type="text"
-                      required
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
-                      placeholder="Full Official Name"
-                      className="w-full bg-transparent text-sm font-semibold text-slate-800 outline-none placeholder:text-slate-400 placeholder:font-medium"
-                    />
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Input 1: Email or Phone Number with circular icon pill */}
-              <div className="space-y-1">
-                <div className="relative flex items-center bg-slate-50/80 hover:bg-slate-100/80 focus-within:bg-white border border-slate-200 focus-within:border-[#1998a1] rounded-full px-4 py-2.5 transition-all shadow-xs">
-                  <div className="w-8 h-8 rounded-full bg-slate-200/70 flex items-center justify-center text-slate-500 mr-3 shrink-0">
-                    <Mail className="w-4 h-4" />
-                  </div>
+              {/* Username Input Box with Radius */}
+              <div className="space-y-1.5">
+                <label className="text-xs font-black text-[#103642] tracking-wide">User ID / Username</label>
+                <div className="relative flex items-center bg-slate-50 hover:bg-slate-100/70 focus-within:bg-white border border-slate-200 focus-within:border-[#1998a1] focus-within:ring-1 focus-within:ring-[#1998a1]/30 rounded-xl px-4 py-2.5 transition-all">
+                  <User className="w-4 h-4 text-slate-400 mr-2.5 shrink-0" />
                   <input
                     type="text"
                     required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email or phone number"
-                    className="w-full bg-transparent text-sm font-semibold text-slate-800 outline-none placeholder:text-slate-400 placeholder:font-medium"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="Enter your User ID"
+                    className="w-full bg-transparent text-xs font-semibold text-slate-700 outline-none placeholder:text-slate-400"
                   />
                 </div>
               </div>
 
-              {/* Input 2: Password with lock icon pill & eye toggle */}
-              <div className="space-y-1">
-                <div className="relative flex items-center bg-slate-50/80 hover:bg-slate-100/80 focus-within:bg-white border border-slate-200 focus-within:border-[#1998a1] rounded-full px-4 py-2.5 transition-all shadow-xs">
-                  <div className="w-8 h-8 rounded-full bg-slate-200/70 flex items-center justify-center text-slate-500 mr-3 shrink-0">
-                    <Lock className="w-4 h-4" />
-                  </div>
+              {/* Password Input Box with Radius */}
+              <div className="space-y-1.5">
+                <label className="text-xs font-black text-[#103642] tracking-wide">Password</label>
+                <div className="relative flex items-center bg-slate-50 hover:bg-slate-100/70 focus-within:bg-white border border-slate-200 focus-within:border-[#1998a1] focus-within:ring-1 focus-within:ring-[#1998a1]/30 rounded-xl px-4 py-2.5 transition-all">
+                  <Lock className="w-4 h-4 text-slate-400 mr-2.5 shrink-0" />
                   <input
                     type={showPassword ? 'text' : 'password'}
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Password"
-                    className="w-full bg-transparent text-sm font-semibold text-slate-800 outline-none placeholder:text-slate-400 placeholder:font-medium"
+                    placeholder="••••••••"
+                    className="w-full bg-transparent text-xs font-semibold text-slate-700 outline-none placeholder:text-slate-400"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="text-slate-400 hover:text-slate-600 transition-colors p-1"
+                    className="text-slate-400 hover:text-slate-600 transition-colors p-1 ml-1 cursor-pointer"
                   >
                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
                 </div>
               </div>
 
-              {/* Form Bottom Row: "Forgot your password?" on left & Login Pill Button on right */}
-              <div className="pt-3 flex items-center justify-between">
+              {/* Captcha Input Box with Radius */}
+              <div className="space-y-1.5">
+                <label className="text-xs font-black text-[#103642] tracking-wide">Security Verification</label>
+                <div className="grid grid-cols-12 gap-3 items-center">
+                  <div className="col-span-6 flex items-center gap-2">
+                    {/* CAPTCHA Display Box with background lines */}
+                    <div className="relative h-11 w-full bg-slate-100 rounded-xl border border-slate-200 overflow-hidden flex items-center justify-center select-none font-mono tracking-widest text-lg font-bold text-slate-700 italic bg-[radial-gradient(#1998a120_1px,transparent_1px)] [background-size:10px_10px]">
+                      <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="10" x2="180" y2="40" stroke="#184c5d" strokeWidth="1.5" />
+                        <line x1="10" y1="35" x2="160" y2="5" stroke="#dbaf25" strokeWidth="1.5" />
+                        <line x1="5" y1="22" x2="175" y2="22" stroke="#1998a1" strokeWidth="1" />
+                      </svg>
+                      <span className="relative z-10 drop-shadow-md select-none">{captchaCode}</span>
+                    </div>
+                    
+                    {/* Refresh Button */}
+                    <button
+                      type="button"
+                      onClick={generateCaptcha}
+                      className="p-2.5 h-11 w-11 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-500 hover:text-slate-700 transition-all flex items-center justify-center cursor-pointer active:scale-95 shrink-0"
+                      title="Refresh CAPTCHA"
+                    >
+                      <RotateCw className="w-4.5 h-4.5" />
+                    </button>
+                  </div>
+
+                  <div className="col-span-6">
+                    <input
+                      type="text"
+                      required
+                      value={captchaInput}
+                      onChange={(e) => setCaptchaInput(e.target.value)}
+                      placeholder="Enter CAPTCHA"
+                      className="h-11 w-full bg-slate-50 hover:bg-slate-100/70 focus:bg-white border border-slate-200 focus:border-[#1998a1] focus:ring-1 focus:ring-[#1998a1]/30 rounded-xl px-4 text-xs font-semibold text-slate-700 outline-none transition-all placeholder:text-slate-400"
+                    />
+                  </div>
+                </div>
+                {captchaError && (
+                  <p className="text-[10px] text-red-500 font-bold mt-1">Invalid CAPTCHA code. Please try again.</p>
+                )}
+              </div>
+
+              {/* Submit Button & Forgot password */}
+              <div className="pt-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <a
                   href="#forgot"
                   onClick={(e) => {
                     e.preventDefault();
-                    alert('Password reset link has been sent to registered email.');
+                    alert('Credentials reset instruction has been sent to your registered mobile and email.');
                   }}
-                  className="text-xs font-semibold text-slate-500 hover:text-[#184c5d] transition-colors underline-offset-4 hover:underline"
+                  className="text-xs font-bold text-[#184c5d] hover:text-[#1998a1] transition-colors underline-offset-4 hover:underline"
                 >
-                  Forgot your password?
+                  Forgot User ID or Password?
                 </a>
 
-                {/* Theme Pill Button matching reference image button style */}
                 <button
                   type="submit"
-                  className="px-8 py-2.5 rounded-full text-xs font-black text-[#184c5d] bg-gradient-to-r from-[#dbaf25] to-[#f5d76e] hover:from-[#c49a1d] hover:to-[#dbaf25] shadow-md shadow-[#dbaf25]/30 hover:shadow-lg transition-all active:scale-95 cursor-pointer uppercase tracking-wider border border-[#dbaf25]"
+                  className="px-10 py-3 text-xs font-black text-[#1F2A44] bg-gradient-to-r from-[#dbaf25] via-[#f5d76e] to-[#C6A75E] hover:from-[#c49a1d] hover:to-[#dbaf25] rounded-xl shadow-lg shadow-[#dbaf25]/25 border border-[#dbaf25] transition-all hover:scale-105 active:scale-95 cursor-pointer text-center"
                 >
-                  {activeTab === 'login' ? 'Login' : 'Sign up'}
+                  Login
                 </button>
               </div>
 
             </form>
-
-            {/* Notice Footer */}
-            <div className="mt-10 pt-4 border-t border-slate-100 text-[11px] text-slate-400 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-              <span>256-Bit SSL Encrypted Statutory Government Portal</span>
-            </div>
-
           </div>
-
-
-          {/* ─── RIGHT COLUMN: Isometric Illustration & Curved Waves Backdrop ─── */}
-          <div className="hidden lg:block lg:col-span-6 relative overflow-hidden bg-gradient-to-br from-[#103642] via-[#184c5d] to-[#103642]">
-            
-            {/* Concentric Curved Waves Backdrop */}
-            <svg 
-              className="absolute inset-0 w-full h-full pointer-events-none" 
-              viewBox="0 0 500 600" 
-              preserveAspectRatio="none"
-            >
-              {/* Outer soft wave 1 */}
-              <path 
-                d="M 120 0 C 220 150 180 400 500 600 L 500 0 Z" 
-                fill="#52d6e0" 
-                opacity="0.15"
-              />
-              {/* Inner accent wave 2 */}
-              <path 
-                d="M 180 0 C 270 180 220 450 500 600 L 500 0 Z" 
-                fill="#1998a1" 
-                opacity="0.25"
-              />
-              {/* Deep central wave 3 */}
-              <path 
-                d="M 240 0 C 310 200 280 480 500 600 L 500 0 Z" 
-                fill="#1f5a6d" 
-                opacity="0.6"
-              />
-            </svg>
-
-            {/* 3D Isometric Desktop Vector Graphic (Laptop, Coffee Mug, Potted Plant) */}
-            <div className="absolute inset-0 flex items-center justify-center p-8 z-10">
-              <div className="relative w-full max-w-sm aspect-square flex items-center justify-center">
-                
-                {/* Isometric SVG Illustration matching the reference graphics */}
-                <svg viewBox="0 0 400 350" className="w-full h-full filter drop-shadow-2xl">
-                  
-                  {/* Base Shadow Overlay */}
-                  <ellipse cx="200" cy="270" rx="160" ry="40" fill="rgba(15, 23, 42, 0.4)" />
-
-                  {/* ═══ 1. ISOMETRIC LAPTOP ═══ */}
-                  <g transform="translate(60, 40)">
-                    {/* Base Bottom Chassis */}
-                    <polygon points="120,220 250,220 280,200 150,200" fill="#E2E8F0" />
-                    <polygon points="120,220 250,220 250,226 120,226" fill="#CBD5E1" />
-                    <polygon points="250,220 280,200 280,206 250,226" fill="#94A3B8" />
-
-                    {/* Trackpad */}
-                    <polygon points="175,214 205,214 212,207 182,207" fill="#64748B" />
-
-                    {/* Keyboard Surface Area */}
-                    <polygon points="135,200 265,200 258,150 128,150" fill="#184c5d" />
-
-                    {/* Individual Keyboard Keys Grid */}
-                    <g fill="#1998a1" opacity="0.9">
-                      <rect x="140" y="155" width="110" height="4" rx="1" transform="skewX(-25)" />
-                      <rect x="142" y="163" width="106" height="4" rx="1" transform="skewX(-25)" />
-                      <rect x="144" y="171" width="102" height="4" rx="1" transform="skewX(-25)" />
-                      <rect x="146" y="179" width="98" height="4" rx="1" transform="skewX(-25)" />
-                      <rect x="148" y="187" width="94" height="4" rx="1" transform="skewX(-25)" />
-                    </g>
-
-                    {/* Laptop Open Screen Panel */}
-                    {/* Screen Outer Bezel */}
-                    <polygon points="128,150 258,150 258,30 128,30" fill="#103642" rx="4" />
-                    {/* Display Inner Screen */}
-                    <polygon points="134,144 252,144 252,36 134,36" fill="#F8FAFC" />
-                    
-                    {/* Screen Display UI Mockup (Mining Portal Dashboard Graphics) */}
-                    <rect x="142" y="46" width="102" height="12" rx="2" fill="#184c5d" />
-                    <rect x="142" y="64" width="46" height="32" rx="3" fill="#1998a1" opacity="0.85" />
-                    <rect x="194" y="64" width="50" height="32" rx="3" fill="#52d6e0" />
-                    <rect x="142" y="102" width="102" height="30" rx="3" fill="#1f5a6d" />
-                    <circle cx="152" cy="117" r="6" fill="#dbaf25" />
-                    <line x1="164" y1="117" x2="230" y2="117" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
-                  </g>
-
-
-                  {/* ═══ 2. STEAMING COFFEE CUP ═══ */}
-                  <g transform="translate(70, 180)">
-                    {/* Shadow */}
-                    <ellipse cx="25" cy="45" rx="15" ry="6" fill="rgba(15, 23, 42, 0.3)" />
-                    {/* Mug Body */}
-                    <rect x="10" y="15" width="30" height="30" rx="4" fill="#FFFFFF" />
-                    {/* Red Tea / Coffee Fill */}
-                    <ellipse cx="25" cy="18" rx="13" ry="5" fill="#E11D48" />
-                    {/* Mug Handle */}
-                    <path d="M 10 22 C 2 22 2 36 10 36" fill="none" stroke="#FFFFFF" strokeWidth="4" strokeLinecap="round" />
-                  </g>
-
-
-                  {/* ═══ 3. POTTED DESK PLANT ═══ */}
-                  <g transform="translate(290, 150)">
-                    {/* Shadow */}
-                    <ellipse cx="25" cy="100" rx="20" ry="7" fill="rgba(15, 23, 42, 0.3)" />
-                    
-                    {/* White Ceramic Pot */}
-                    <path d="M 10 60 L 14 96 C 15 100 35 100 36 96 L 40 60 Z" fill="#FFFFFF" />
-                    <ellipse cx="25" cy="60" rx="15" ry="4" fill="#E2E8F0" />
-                    <ellipse cx="25" cy="61" rx="13" ry="3" fill="#78350F" />
-
-                    {/* Succulent / Plant Leaves */}
-                    <path d="M 25 60 Q 20 20 25 10 Q 30 20 25 60 Z" fill="#10B981" />
-                    <path d="M 25 60 Q 5 35 10 20 Q 20 35 25 60 Z" fill="#059669" />
-                    <path d="M 25 60 Q 45 35 40 20 Q 30 35 25 60 Z" fill="#047857" />
-                    <path d="M 25 60 Q 15 45 18 35 Q 25 45 25 60 Z" fill="#34D399" />
-                  </g>
-
-                </svg>
-
-              </div>
-            </div>
-
-            {/* Corner Decorative Badge Overlay */}
-            <div className="absolute bottom-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 text-white p-4 rounded-2xl max-w-[220px] shadow-xl z-20">
-              <div className="text-xs font-black text-[#dbaf25] uppercase tracking-wider mb-0.5">
-                Statutory PMKKKY Portal
-              </div>
-              <p className="text-[11px] text-slate-200 font-medium leading-snug">
-                Transparent beneficiary tracking & leaseholder compliance governance.
-              </p>
-            </div>
-
-          </div>
-
         </div>
 
-      </motion.div>
+        {/* Right Column: Hexagons Decorative Illustration styled in project colors */}
+        <div className="hidden md:block md:col-span-6 relative overflow-hidden bg-gradient-to-br from-[#103642] to-[#184c5d] select-none border-l border-[#1998a1]/10">
+          <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
+          <svg viewBox="0 0 400 500" className="w-full h-full block">
+            <defs>
+              <clipPath id="clipHexA">
+                <polygon points={getHexPoints(270, 280, 84)} />
+              </clipPath>
+              <clipPath id="clipHexL">
+                <polygon points={getHexPoints(395, 190, 52)} />
+              </clipPath>
+              <clipPath id="clipHexI">
+                <polygon points={getHexPoints(390, 410, 86)} />
+              </clipPath>
+            </defs>
 
+            {/* Hexagon G (Top-Right Filled - Gold - BLANK) */}
+            <polygon
+              points={getHexPoints(360, 110, 48)}
+              fill="#dbaf25"
+              opacity="0.15"
+            />
+
+            {/* Hexagon E (Top-Left Filled - Teal - BLANK) */}
+            <polygon
+              points={getHexPoints(95, 110, 40)}
+              fill="#1998a1"
+              opacity="0.4"
+            />
+            {/* Hexagon E Overlay Glowy Frame */}
+            <polygon
+              points={getHexPoints(95, 110, 40)}
+              fill="none"
+              stroke="#1998a1"
+              strokeWidth="1.5"
+              opacity="0.7"
+              style={{ filter: 'drop-shadow(0 0 5px rgba(25, 152, 161, 0.8))' }}
+            />
+
+            {/* Hexagon F (Top-Left Outline - Gold - GLOWY) */}
+            <polygon
+              points={getHexPoints(125, 90, 36)}
+              fill="none"
+              stroke="#dbaf25"
+              strokeWidth="2"
+              opacity="0.8"
+              style={{ filter: 'drop-shadow(0 0 5px rgba(219, 175, 37, 0.8))' }}
+            />
+            {/* Hexagon H (Top-Center-Right Outline/Small - BLANK) */}
+            <polygon
+              points={getHexPoints(300, 80, 20)}
+              fill="#1998a1"
+              opacity="0.2"
+            />
+
+            {/* Hexagon B (Medium-Right, Overlapping Large Hexagon - Teal - BLANK) */}
+            <polygon
+              points={getHexPoints(330, 230, 52)}
+              fill="#1998a1"
+              opacity="0.25"
+            />
+
+            {/* Hexagon L (New Big Hexagon with Image - Clipped) */}
+            <image
+              href={aboutKiosk}
+              x={395 - 52 * Math.sqrt(3) / 2}
+              y={190 - 52}
+              width={52 * Math.sqrt(3)}
+              height={52 * 2}
+              clipPath="url(#clipHexL)"
+              preserveAspectRatio="xMidYMid slice"
+              opacity="0.85"
+            />
+            {/* Hexagon L Overlay Glowy Frame */}
+            <polygon
+              points={getHexPoints(395, 190, 52)}
+              fill="none"
+              stroke="#1998a1"
+              strokeWidth="2"
+              opacity="0.9"
+              style={{ filter: 'drop-shadow(0 0 6px rgba(25, 152, 161, 0.9))' }}
+            />
+
+            {/* Hexagon A (Large-Center-Right Image - Clipped) */}
+            <image
+              href={frontimg}
+              x={270 - 84 * Math.sqrt(3) / 2}
+              y={280 - 84}
+              width={84 * Math.sqrt(3)}
+              height={84 * 2}
+              clipPath="url(#clipHexA)"
+              preserveAspectRatio="xMidYMid slice"
+              opacity="0.75"
+            />
+            {/* Hexagon A Overlay Glowy Frame */}
+            <polygon
+              points={getHexPoints(270, 280, 84)}
+              fill="none"
+              stroke="#1998a1"
+              strokeWidth="2"
+              opacity="0.9"
+              style={{ filter: 'drop-shadow(0 0 6px rgba(25, 152, 161, 0.9))' }}
+            />
+
+            {/* Hexagon C (Small-Right Filled Overlap - Gold - BLANK) */}
+            <polygon
+              points={getHexPoints(310, 325, 28)}
+              fill="#dbaf25"
+              opacity="0.85"
+            />
+            {/* Hexagon D (Medium-Left Outline Overlap - Teal - GLOWY) */}
+            <polygon
+              points={getHexPoints(210, 320, 38)}
+              fill="none"
+              stroke="#1998a1"
+              strokeWidth="2.2"
+              opacity="0.8"
+              style={{ filter: 'drop-shadow(0 0 5px rgba(25, 152, 161, 0.8))' }}
+            />
+
+            {/* Hexagon I (Large-Bottom-Right - Gold - GLOWY with Image) */}
+            <image
+              href={heroAdminTeam}
+              x={390 - 86 * Math.sqrt(3) / 2}
+              y={410 - 86}
+              width={86 * Math.sqrt(3)}
+              height={86 * 2}
+              clipPath="url(#clipHexI)"
+              preserveAspectRatio="xMidYMid slice"
+              opacity="0.75"
+            />
+            {/* Hexagon I Overlay Glowy Frame */}
+            <polygon
+              points={getHexPoints(390, 410, 86)}
+              fill="none"
+              stroke="#dbaf25"
+              strokeWidth="2.5"
+              opacity="0.8"
+              style={{ filter: 'drop-shadow(0 0 6px rgba(219, 175, 37, 0.8))' }}
+            />
+
+            {/* Hexagon J (Bottom-Center Filled - Teal - BLANK) */}
+            <polygon
+              points={getHexPoints(230, 430, 50)}
+              fill="#1998a1"
+              opacity="0.4"
+            />
+            {/* Hexagon J Overlay Glowy Frame */}
+            <polygon
+              points={getHexPoints(230, 430, 50)}
+              fill="none"
+              stroke="#1998a1"
+              strokeWidth="1.5"
+              opacity="0.7"
+              style={{ filter: 'drop-shadow(0 0 5px rgba(25, 152, 161, 0.8))' }}
+            />
+
+            {/* Hexagon K (Bottom-Center Outline - Teal - GLOWY) */}
+            <polygon
+              points={getHexPoints(270, 410, 30)}
+              fill="none"
+              stroke="#1998a1"
+              strokeWidth="2.2"
+              opacity="0.8"
+              style={{ filter: 'drop-shadow(0 0 5px rgba(25, 152, 161, 0.8))' }}
+            />
+
+            {/* Decorative Solid Dots/Hexagons */}
+            <circle cx="210" cy="195" r="7" fill="#1998a1" opacity="0.9" />
+            <circle cx="276" cy="128" r="6" fill="#dbaf25" opacity="0.95" />
+            <circle cx="380" cy="275" r="9" fill="#1998a1" opacity="0.8" />
+            <circle cx="212" cy="370" r="9" fill="#dbaf25" opacity="0.9" />
+            <circle cx="282" cy="270" r="5" fill="#ffffff" opacity="0.95" />
+            <circle cx="348" cy="422" r="7" fill="#1998a1" opacity="0.9" />
+          </svg>
+        </div>
+      </motion.div>
     </div>
   );
 };
