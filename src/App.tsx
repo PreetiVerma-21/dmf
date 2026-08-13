@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ConfigProvider } from 'antd';
 import { customTheme } from './theme/antdTheme';
+import { HelpCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { TopHeader } from './components/layout/TopHeader';
 import { MainNavbar } from './components/layout/MainNavbar';
@@ -27,6 +29,7 @@ export const App: React.FC = () => {
   const [requestAccessOpen, setRequestAccessOpen] = useState(false);
   const [selectedDept, setSelectedDept] = useState<DepartmentItem | null>(null);
   const [activeSection, setActiveSection] = useState('home');
+  const [isHelpHovered, setIsHelpHovered] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     if (currentView !== 'home') {
@@ -132,6 +135,31 @@ export const App: React.FC = () => {
             setCurrentView('login');
           }}
         />
+
+        {/* Floating Action Help Button */}
+        <motion.button
+          className="fixed bottom-6 right-6 z-50 flex items-center bg-[#15828a] hover:bg-[#103642] text-white rounded-full p-3.5 shadow-lg shadow-[#15828a]/20 border border-[#1998a1]/30 transition-colors cursor-pointer select-none"
+          onHoverStart={() => setIsHelpHovered(true)}
+          onHoverEnd={() => setIsHelpHovered(false)}
+          onClick={() => alert('Support helpline: +91-771-2510123. Email: support.dmf@cg.gov.in')}
+          layout
+          style={{ borderRadius: 30 }}
+        >
+          <HelpCircle className="w-5.5 h-5.5 shrink-0" />
+          <AnimatePresence>
+            {isHelpHovered && (
+              <motion.span
+                initial={{ opacity: 0, width: 0, marginLeft: 0 }}
+                animate={{ opacity: 1, width: 'auto', marginLeft: 8 }}
+                exit={{ opacity: 0, width: 0, marginLeft: 0 }}
+                transition={{ duration: 0.2 }}
+                className="text-xs font-black tracking-wide whitespace-nowrap pr-1.5"
+              >
+                Help & Support
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </motion.button>
 
       </div>
     </ConfigProvider>
